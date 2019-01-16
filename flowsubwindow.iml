@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output/>
+    <orderEntry type="inheritedJdk"/>
+    <content url="file://$MODULE_DIR$/">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource"/>
+      <excludeFolder url="file://$MODULE_DIR$/.gradle"/>
+      <excludeFolder url="file://$MODULE_DIR$/build"/>
+    </content>
+    <orderEntry type="sourceFolder" forTests="false"/>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-core/12.0.1/3a1f136d38bfab149b85c9ce1af9834943e3c6de/vaadin-core-12.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-button-flow/1.2.0/649eac465259427213a6727983778ee8e1e52a1e/vaadin-button-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-button-flow/1.2.0/44d7ec643809a1bf895b38aa9983748394ab1eaa/vaadin-button-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-button-flow/1.2.0/459d05485f18b4b6aaf27742bae765f456041e3e/vaadin-button-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-checkbox-flow/1.2.0/bb5538f33f3570ffc2e4cb70bbe5bcfd4863b505/vaadin-checkbox-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-checkbox-flow/1.2.0/85a16c74da413ca46dd05ea4dd76a98ca1d1e6d4/vaadin-checkbox-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-checkbox-flow/1.2.0/202e554c02307b88f6b0e9f2e062e8f926f2511a/vaadin-checkbox-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-combo-box-flow/2.0.1/1f82d8a30c7d13ddef7447b56562460ce2612883/vaadin-combo-box-flow-2.0.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-combo-box-flow/2.0.1/14ae171aebf4cf85a3524a77b7eed5dff8f78bf8/vaadin-combo-box-flow-2.0.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-combo-box-flow/2.0.1/84cfd38ddc4ae427161d9919895a960fb42ac18e/vaadin-combo-box-flow-2.0.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-date-picker-flow/1.2.1/dad3998f2b0afc76c8227caf7269f56a16ebdb81/vaadin-date-picker-flow-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-date-picker-flow/1.2.1/a6fcbce13074729be4a5c6949ee86d77ee2674ab/vaadin-date-picker-flow-1.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-date-picker-flow/1.2.1/1691807b3b3373c17ac8e94052b8b29110019dae/vaadin-date-picker-flow-1.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-dialog-flow/1.2.0/e18894ec860b847a3a330cb5a8d1125d65549962/vaadin-dialog-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-dialog-flow/1.2.0/c13c330f9b321c85641f5eb0903bd7450d7d3e2f/vaadin-dialog-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-dialog-flow/1.2.0/ea9a723aac6d82c26d76e2d45ced6beea090ba87/vaadin-dialog-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-form-layout-flow/1.2.0/79add788b451aea7f1ad208c6a7a86f37da7818f/vaadin-form-layout-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-form-layout-flow/1.2.0/2bc9bd1cbfa4b2e4f17bdcfb89b8d4b9c03fa484/vaadin-form-layout-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-form-layout-flow/1.2.0/4a9aa1d3aa3a2aca4e35594fdedca2d04d26aa7a/vaadin-form-layout-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-grid-flow/2.1.3/d06030226a88ebb12ca059b664c3c8d5e832d846/vaadin-grid-flow-2.1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-grid-flow/2.1.3/207ad0ad96a089f3867dad5ae533f2cc6ef07c75/vaadin-grid-flow-2.1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-grid-flow/2.1.3/16cfe5f94634b42343b30367d63b284a9ad7782/vaadin-grid-flow-2.1.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-list-box-flow/1.2.0/de1e38bb502e6f3628edea32268a8d29ee0452b9/vaadin-list-box-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-list-box-flow/1.2.0/883ecb635f5834125b53a68eaef846b33d52231b/vaadin-list-box-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-list-box-flow/1.2.0/b0ba5eeb888d0b3f9f74e419afa6960fb427458f/vaadin-list-box-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-ordered-layout-flow/1.2.0/eb97b48ec15b4516304e0b3ccb0a187fe92658de/vaadin-ordered-layout-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-ordered-layout-flow/1.2.0/60fd15d831706fa0184d50ecc931d681ad09e5d0/vaadin-ordered-layout-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-ordered-layout-flow/1.2.0/cf42de9c504afc23f158698f8349be5a9bef1f8a/vaadin-ordered-layout-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-progress-bar-flow/1.2.0/d592faa1bc7fdd073f02e276b8617589e4c531f0/vaadin-progress-bar-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-progress-bar-flow/1.2.0/4a7a8fb2f411068bf29e09272dc6877d087924bf/vaadin-progress-bar-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-progress-bar-flow/1.2.0/3d02842812fc17a6c874c8b0a5955881b42abec2/vaadin-progress-bar-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-radio-button-flow/1.2.0/611ae584d3016de29557d452b0c5245e4b1118ba/vaadin-radio-button-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-radio-button-flow/1.2.0/a903a1eaa575bb2decb66fa543f14dc5ac4a5dc/vaadin-radio-button-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-radio-button-flow/1.2.0/adf5b01d06ded0a81431908463db327417072356/vaadin-radio-button-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-split-layout-flow/1.2.0/a772a00ef5742374131550cd42d0dd3d1604e2e6/vaadin-split-layout-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-split-layout-flow/1.2.0/3ce0e84f336617178725c6d5327a4b20084e69d6/vaadin-split-layout-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-split-layout-flow/1.2.0/b024876d73818044b81dd26ccca16a827dc61a11/vaadin-split-layout-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-app-layout-flow/1.0.3/ebda9daa40d1638faeb0be368eedcbd8379c7ca4/vaadin-app-layout-flow-1.0.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-app-layout-flow/1.0.3/a72a5b9467b05873f322bf78aef968b0c69eb500/vaadin-app-layout-flow-1.0.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-app-layout-flow/1.0.3/b3c7d14c6de42a64a5e38e48da6b9daf87e68588/vaadin-app-layout-flow-1.0.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-tabs-flow/1.2.0/4fe41d6056201f66e2a848f25e4ffe487c3b0e75/vaadin-tabs-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-tabs-flow/1.2.0/28e95bc6a4d0f7b7b26a991be085a3c75b6e1f04/vaadin-tabs-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-tabs-flow/1.2.0/3376d77282454a44c419d0a39e62bc3eaf8a2b36/vaadin-tabs-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-text-field-flow/1.2.1/65f0357de6d37820518f28793a9a60c97e9255cf/vaadin-text-field-flow-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-text-field-flow/1.2.1/f448216bc70f4e8b73880fdae9c4fe63e3f6770e/vaadin-text-field-flow-1.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-text-field-flow/1.2.1/226bee52573820161c80129d18c51a67c1d6b8e2/vaadin-text-field-flow-1.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-upload-flow/1.2.0/ecbc592ba33af07aa96d7b1ef9abcf2b9fa48dd/vaadin-upload-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-upload-flow/1.2.0/f99f7d039d66b5990e0fa816bce59a71710677eb/vaadin-upload-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-upload-flow/1.2.0/3222d9dfbdb6d8c0e1df516511b40974508a7e2/vaadin-upload-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-notification-flow/1.2.0/955b75f244279305c73cc0ab6957ea2c427a8ddd/vaadin-notification-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-notification-flow/1.2.0/d8829277014e26c2038e04f9903e9568522c2444/vaadin-notification-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-notification-flow/1.2.0/4951d73f5b51a9cdb57bf8d2eb150ebeb70f20ae/vaadin-notification-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-context-menu-flow/1.2.1/745e273546e31e74c66de66e871eb475f28eb3bd/vaadin-context-menu-flow-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-context-menu-flow/1.2.1/6e22237d44ee983e640e0d1eb5cb2827b29a155c/vaadin-context-menu-flow-1.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-context-menu-flow/1.2.1/b7ff01126556030d853de74bbbe1487e1e01f095/vaadin-context-menu-flow-1.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-date-picker/3.3.2/6cc0217d61ec9e0aad66e6069289f55ffd95ed2a/vaadin-date-picker-3.3.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-date-picker/3.3.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-date-picker-3.3.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-date-picker/3.3.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-date-picker-3.3.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-upload/4.2.1/e55fcb7b1a3e097b08a3aaba91d899636dff8103/vaadin-upload-4.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-upload/4.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-upload-4.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-upload/4.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-upload-4.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-button/2.1.1/12caf7d9d6eb153a506e0a5781a6ed91d74d9a12/vaadin-button-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-button/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-button-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-button/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-button-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-grid/5.2.5/d86daf38854f215f83ebfdcf21318d3b6151d82f/vaadin-grid-5.2.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-grid/5.2.5/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-grid-5.2.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-grid/5.2.5/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-grid-5.2.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-checkbox/2.2.4/a2d3d01b204a21045399f407d37d20d4dd72763/vaadin-checkbox-2.2.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-checkbox/2.2.4/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-checkbox-2.2.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-checkbox/2.2.4/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-checkbox-2.2.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-combo-box/4.2.0/7fe045522496f575e9a385a686169a00157393a2/vaadin-combo-box-4.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-combo-box/4.2.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-combo-box-4.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-combo-box/4.2.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-combo-box-4.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-text-field/2.1.5/4014e477b98d5aa7cd877e09af9e9ec43ef2193c/vaadin-text-field-2.1.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-text-field/2.1.5/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-text-field-2.1.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-text-field/2.1.5/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-text-field-2.1.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-dialog/2.2.1/f5b411397659d87ccc2d2056abd541aaeedb0a03/vaadin-dialog-2.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-dialog/2.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-dialog-2.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-dialog/2.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-dialog-2.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-form-layout/2.1.1/730845df6b3daecfc2b67964a0d34ec411528c24/vaadin-form-layout-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-form-layout/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-form-layout-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-form-layout/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-form-layout-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-list-box/1.1.0/819007c6a2e0c5c5b2c96fa86df09b46e207162a/vaadin-list-box-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-list-box/1.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-list-box-1.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-list-box/1.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-list-box-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-ordered-layout/1.1.0/8ec05a8b59c7da562f51a6d49fdcdc875fdd5eda/vaadin-ordered-layout-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-ordered-layout/1.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-ordered-layout-1.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-ordered-layout/1.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-ordered-layout-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-progress-bar/1.1.0/af0c9c72ae1f552998b34ca29db18e88983ec97a/vaadin-progress-bar-1.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-progress-bar/1.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-progress-bar-1.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-progress-bar/1.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-progress-bar-1.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-radio-button/1.1.3/19576f3b48cf10b312219e52c310b12d707532bd/vaadin-radio-button-1.1.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-radio-button/1.1.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-radio-button-1.1.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-radio-button/1.1.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-radio-button-1.1.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-split-layout/4.1.0/90f82573357e79539254f2a9a501ae954207f4cf/vaadin-split-layout-4.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-split-layout/4.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-split-layout-4.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-split-layout/4.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-split-layout-4.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-tabs/2.1.1/731373f6f7fdcb98cea48525de32eecb8333e3c2/vaadin-tabs-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-tabs/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-tabs-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-tabs/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-tabs-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-notification/1.2.1/80670538cea9e821a144e5220d99d4f019a36648/vaadin-notification-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-notification/1.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-notification-1.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-notification/1.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-notification-1.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-app-layout/1.0.2/841d9f70ed02ef3a22c2eb12946986c7bccf7284/vaadin-app-layout-1.0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-app-layout/1.0.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-app-layout-1.0.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-app-layout/1.0.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-app-layout-1.0.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-context-menu/4.2.1/308cf1d461cb4f2c8e3de5131555db5285107175/vaadin-context-menu-4.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-context-menu/4.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-context-menu-4.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-context-menu/4.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-context-menu-4.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-element-mixin/2.1.2/a4133d85a79b283e2e5175ccb67ce7602c3cbb16/vaadin-element-mixin-2.1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-element-mixin/2.1.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-element-mixin-2.1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-element-mixin/2.1.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-element-mixin-2.1.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-usage-statistics/1.0.0-optout/d1bf19f1ba3072e695c8b3bd5f5fe64bdbea6403/vaadin-usage-statistics-1.0.0-optout.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-usage-statistics/1.0.0-optout/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-usage-statistics-1.0.0-optout-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-usage-statistics/1.0.0-optout/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-usage-statistics-1.0.0-optout-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.devsoap/gradle-vaadin-flow-plugin/1.0.0.RC4/7fae169f3af270abe57226a6b5871c5f198ba0db/gradle-vaadin-flow-plugin-1.0.0.RC4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.devsoap/gradle-vaadin-flow-plugin/1.0.0.RC4/9be442944e12d1ed69dbeca731a262376e170ac6/gradle-vaadin-flow-plugin-1.0.0.RC4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.moowork.gradle/gradle-node-plugin/1.2.0/99efdc6275e52c72a2023a655af500eace21c50d/gradle-node-plugin-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.moowork.gradle/gradle-node-plugin/1.2.0/f4525b8ad07a60b85a8c573d96acdb58c7dfafb9/gradle-node-plugin-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.moowork.gradle/gradle-node-plugin/1.2.0/329871315349f12c0aa60dc0bd468fa03c349132/gradle-node-plugin-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/7898c2d7d0779c852dea51cb75a446eeb932eb1b/javax.servlet-api-3.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.0/fc843b649d4a1dcb0497669d262befa3918c7ba8/javax.websocket-api-1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.0/8aa4533fdb53724128633cdf0b184cd69c2e0714/javax.websocket-api-1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.0/107b0fdc7ca320b54dc1393e01585be5883ff348/javax.websocket-api-1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-data/1.2.3/fa6c32cdaf542730087b96da6692d40e0e9dc145/flow-data-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-data/1.2.3/5b1ef410be40ceef8fb5f82cb6050f5b8543deb3/flow-data-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-data/1.2.3/f48de2ac84ee07537a6b60ba544faa190c42ca6c/flow-data-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-html-components/1.2.3/f82aa656b54f9528985b9f98296e16b7d7b8631b/flow-html-components-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-html-components/1.2.3/7c5d484e54e4cad08d0955676dd4a89478a89621/flow-html-components-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-html-components/1.2.3/e4f1ed5814e60f59d309cc1488df918743cfc89c/flow-html-components-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-server/1.2.3/578a7bced11d894cf45d6d708c27ccff376271d5/flow-server-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-server/1.2.3/55ef414af68c001d008d517c6fdfd923457ed742/flow-server-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-server/1.2.3/3b0645d028caf3a2a4731db3d63d524c2bf77c00/flow-server-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-push/1.2.3/7848dbfb37dbae84c301ca249e2291fdb07a7873/flow-push-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-push/1.2.3/b52cd8d7d7f2cdbf932d41ba2516a6f0b26dc8b3/flow-push-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-push/1.2.3/c1863442576a356b81da30f7486fb5d2a3211da6/flow-push-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-client/1.2.3/56dc04d75f3fd7ef455af7acf71ba9eedd430385/flow-client-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-client/1.2.3/db1d85d88b0d376d28e289e70a0275b048f5c210/flow-client-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/flow-client/1.2.3/6ca0056047bb1c5592e0409e397de8c012dda506/flow-client-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-lumo-theme/1.2.3/5bf41fdbf44d8f5e9339c6a16275e8ffb80ce014/vaadin-lumo-theme-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-lumo-theme/1.2.3/21b724f554b13492023dcb21be3f8dcb579c78fd/vaadin-lumo-theme-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-lumo-theme/1.2.3/529a1ef356e06cc1dc6e4eb2488cc99f1f229f04/vaadin-lumo-theme-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-material-theme/1.2.3/2b64ba95c052ac652a7f262dc56a5c9f304771b4/vaadin-material-theme-1.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-material-theme/1.2.3/d57bc768ab4ed036b337042df34055ae4dcbe6e3/vaadin-material-theme-1.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-material-theme/1.2.3/4b1800ad069bf956d951141b3efaaa2ef1a2f9cd/vaadin-material-theme-1.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-icons-flow/1.2.0/9e7246177bd622fee7a1ce6ab20b30216667b6e7/vaadin-icons-flow-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-icons-flow/1.2.0/87c65cf4309a3cc46de7d1bb6521a232bb8efd51/vaadin-icons-flow-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-icons-flow/1.2.0/5e40db1325d917bf6d1376f4342334026a233ae8/vaadin-icons-flow-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-iron-list-flow/1.2.1/c513d3054ebebe71dc1a4736e8ca7916a8ad3192/vaadin-iron-list-flow-1.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-iron-list-flow/1.2.1/e7176ae3d5171393c8d157300de30bce66667bcb/vaadin-iron-list-flow-1.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin/vaadin-iron-list-flow/1.2.1/c93e968cac2dfa563697324a3ad22c405a292c6a/vaadin-iron-list-flow-1.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.helger/ph-css/6.1.1/917191de545d933eb813679d0cccac40ffe0c102/ph-css-6.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.helger/ph-css/6.1.1/9a0c94710a1e647b904b512d5af3eac828b9ade0/ph-css-6.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.helger/ph-css/6.1.1/6e8b443c4dd16915d0bdc417f89baad778f5f8ce/ph-css-6.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.helger/ph-commons/9.1.2/1bc415a2ce3195cd6bd47bbc5ad8ca4d701ba5e8/ph-commons-9.1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.helger/ph-commons/9.1.2/63b9add6cbb1724414c75d585c4d59741f3a6c04/ph-commons-9.1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.helger/ph-commons/9.1.2/9a8e0201a751dedd05e2e39b25c65b213729a02a/ph-commons-9.1.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/f003e89ddebdbaca5cf3fc7cc0c67c88c2ca1a3c/slf4j-api-1.7.25-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/962153db4a9ea71b79d047dfd1b2a0d80d8f4739/slf4j-api-1.7.25-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-item/2.1.0/4eb72fe526144d24d0a6f811b81375a19482ff35/vaadin-item-2.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-item/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-item-2.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-item/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-item-2.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-overlay/3.2.3/c8948953757d645af5df0bb3498c38682f57221e/vaadin-overlay-3.2.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-overlay/3.2.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-overlay-3.2.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-overlay/3.2.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-overlay-3.2.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-lumo-styles/1.3.3/e8627f4ba2e73650de8c517201f83aabb143c61b/vaadin-lumo-styles-1.3.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-lumo-styles/1.3.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-lumo-styles-1.3.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-lumo-styles/1.3.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-lumo-styles-1.3.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-icons/4.2.1/25c453de91dccb360a671c2a6530caa1930d2a94/vaadin-icons-4.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-icons/4.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-icons-4.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-icons/4.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-icons-4.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-icon/2.1.0/35ef545b59d796b4ddd2a2514d8092c48aeb73b2/iron-icon-2.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-icon/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-icon-2.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-icon/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-icon-2.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-flex-layout/2.0.3/ae34f717d45b89fb243d7b177f8846ea3b1f7297/iron-flex-layout-2.0.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-flex-layout/2.0.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-flex-layout-2.0.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-flex-layout/2.0.3/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-flex-layout-2.0.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-material-styles/1.2.0/937c8497e38f8680cba640448b7f894aed05d237/vaadin-material-styles-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-material-styles/1.2.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-material-styles-1.2.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-material-styles/1.2.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-material-styles-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-list-mixin/2.1.2/957829d7bd5ce35e21eadc4a652c75ae8371bc51/vaadin-list-mixin-2.1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-list-mixin/2.1.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-list-mixin-2.1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-list-mixin/2.1.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-list-mixin-2.1.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-development-mode-detector/2.0.0/67e47cd8fc0a631325356184cf39cd1c7a111d5b/vaadin-development-mode-detector-2.0.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-development-mode-detector/2.0.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-development-mode-detector-2.0.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-development-mode-detector/2.0.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-development-mode-detector-2.0.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-themable-mixin/1.3.2/5308eb826b7eb6bb3457723e1e666e9c63b15288/vaadin-themable-mixin-1.3.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-themable-mixin/1.3.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-themable-mixin-1.3.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-themable-mixin/1.3.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-themable-mixin-1.3.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-control-state-mixin/2.1.2/e2c584c33f830dcbb0a94edded48a1b11e2827e5/vaadin-control-state-mixin-2.1.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-control-state-mixin/2.1.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-control-state-mixin-2.1.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.vaadin/vaadin-control-state-mixin/2.1.2/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/vaadin-control-state-mixin-2.1.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-iconset-svg/2.2.1/1d6595a659df3e8e6a8a2503c80156b2caffc631/iron-iconset-svg-2.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-iconset-svg/2.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-iconset-svg-2.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-iconset-svg/2.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-iconset-svg-2.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-meta/2.1.1/c8b771b5986d73365346346fc772d179fdb80f38/iron-meta-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-meta/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-meta-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-meta/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-meta-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-list/2.0.19/a22eefbbc26eb4c72b79390c51a72a5d63c6864d/iron-list-2.0.19.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-list/2.0.19/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-list-2.0.19-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-list/2.0.19/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-list-2.0.19-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-overlay-behavior/2.3.4/5f7a903f04a78c7cacec3cd73306675f063f70a6/iron-overlay-behavior-2.3.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-overlay-behavior/2.3.4/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-overlay-behavior-2.3.4-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-overlay-behavior/2.3.4/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-overlay-behavior-2.3.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-a11y-keys-behavior/2.1.1/af0b79dd45a061014372ed3864360492d0e6c5cf/iron-a11y-keys-behavior-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-a11y-keys-behavior/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-a11y-keys-behavior-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-a11y-keys-behavior/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-a11y-keys-behavior-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-resizable-behavior/2.1.1/91a052e73b8dd1cb4ac8f2f7804d8c58f211faf2/iron-resizable-behavior-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-resizable-behavior/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-resizable-behavior-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-resizable-behavior/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-resizable-behavior-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-a11y-announcer/2.1.0/a90db8f3c35c21fbd75da3449f7e8a9e078d906c/iron-a11y-announcer-2.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-a11y-announcer/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-a11y-announcer-2.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-a11y-announcer/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-a11y-announcer-2.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-scroll-target-behavior/2.1.1/493bdbcdc30903927d9ecd7ffc6f91320b85d2c1/iron-scroll-target-behavior-2.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-scroll-target-behavior/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-scroll-target-behavior-2.1.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-scroll-target-behavior/2.1.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-scroll-target-behavior-2.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-fit-behavior/2.2.1/db2caf438ff6e3f9c758f5e11e6f2857c96ab4fa/iron-fit-behavior-2.2.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-fit-behavior/2.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-fit-behavior-2.2.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-fit-behavior/2.2.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-fit-behavior-2.2.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-media-query/2.1.0/1033da84f31c5a09a72a35ff491a5ec59a023ca2/iron-media-query-2.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-media-query/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-media-query-2.1.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymerelements/iron-media-query/2.1.0/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/iron-media-query-2.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymer/polymer/2.6.1/9d36457a1ceee48f3660751cc51259e44099fd2b/polymer-2.6.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymer/polymer/2.6.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/polymer-2.6.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.polymer/polymer/2.6.1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/polymer-2.6.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.webcomponents/webcomponentsjs/1.2.6/fd99e6ef6aa52f083bbe04524b8794a7ba97ab52/webcomponentsjs-1.2.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.webcomponents/webcomponentsjs/1.2.6/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/webcomponentsjs-1.2.6-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.webcomponents/webcomponentsjs/1.2.6/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/webcomponentsjs-1.2.6-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.webcomponents/shadycss/1.5.0-1/1e2cfe6aec53af574586da705183a9e67c8048fc/shadycss-1.5.0-1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.webcomponents/shadycss/1.5.0-1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/shadycss-1.5.0-1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.webjars.bowergithub.webcomponents/shadycss/1.5.0-1/b04f3ee8f5e43fa3b162981b50bb72fe1acabb33/shadycss-1.5.0-1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.gwt/gwt-elemental/2.8.2.vaadin2/abdfd4fcfbc0652298061be8c70a56a6d6e868b2/gwt-elemental-2.8.2.vaadin2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.gwt/gwt-elemental/2.8.2.vaadin2/c6861b1d450bacd80307e093c5e0916e8428e6b8/gwt-elemental-2.8.2.vaadin2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.gwt/gwt-elemental/2.8.2.vaadin2/47ae4b424710dd7b04fe6f046683786420ae9be3/gwt-elemental-2.8.2.vaadin2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.3/4ff14d809195b711fd6bcc87e6777f886730ca1/commons-fileupload-1.3.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.3/d44ff01a7e0217b5c849c5375a3a8ad13a338375/commons-fileupload-1.3.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.3/34c8608c461e2c832a364ec1a9e70f360f47d9f7/commons-fileupload-1.3.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/b219c20b7b44a4da22cb1898bfc6bfbb100f33c7/commons-io-2.5-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/caf033a4a7c37b4a8ff3ea084cba591539b0b69/commons-io-2.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.10.3/b842f960942503cf1abbcc8c173a7f2c19d43726/jsoup-1.10.3.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.10.3/f1bf4d4d86cc4abce247bac2238c8cbc426b68c6/jsoup-1.10.3-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.10.3/89116c309401a6457942135ee47be41ea0eb1ab7/jsoup-1.10.3-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.9.0/8cb0d5baae526c9df46ae17693bbba302640538b/byte-buddy-1.9.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.9.0/ef9ad74da5f638941e8dd2e5f56369d8319526f0/byte-buddy-1.9.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.9.0/12391ab880117385828a50e6d9a367f184de3850/byte-buddy-1.9.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external/gentyref/1.2.0.vaadin1/c914574fdf1d7c7b85f58965d10f7a83811bb7c6/gentyref-1.2.0.vaadin1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external/gentyref/1.2.0.vaadin1/572c270075e24bab1cb4c428bd11e9bcc803227b/gentyref-1.2.0.vaadin1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external/gentyref/1.2.0.vaadin1/4a158611168f9cfa33e8ac944fae490d12917404/gentyref-1.2.0.vaadin1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.atmosphere/atmosphere-runtime/2.4.30.vaadin1/5d0f5e2d427cf0015d2adfe885d5bcde54f56665/atmosphere-runtime-2.4.30.vaadin1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.atmosphere/atmosphere-runtime/2.4.30.vaadin1/a073f503a46d2293e15716fae158e757c6cfb9a0/atmosphere-runtime-2.4.30.vaadin1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.atmosphere/atmosphere-runtime/2.4.30.vaadin1/4df038418a0b3cc548db863a4d56f9d5034bd8e3/atmosphere-runtime-2.4.30.vaadin1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/2.0.0.Final/4a7ff48084bd336c4de1f79f027f6f77badf399e/validation-api-2.0.0.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/2.0.0.Final/b92799e4f39b9cb09b2e57d1fe25443e0ff96bcb/validation-api-2.0.0.Final-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/2.0.0.Final/112486c576959bda5d57c1815af62fbee2621b55/validation-api-2.0.0.Final-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/8873bd0bb5cb9ee37f1b04578eb7e26fcdd44cb0/commons-lang3-3.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/14f3e1e7e593cdfa84048e96db9b142db93bf492/commons-lang3-3.0-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/d48f964b56a931ec2712ce5d411a40d114a69753/commons-lang3-3.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/7cb5b4e91eb0741882c8fefb2fd0338eff9857c/jsr305-3.0.2-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.slf4j/vaadin-slf4j-jdk14/1.6.1/2268b4bb8226e01963357bc9a02a5d56c9992b8a/vaadin-slf4j-jdk14-1.6.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.slf4j/vaadin-slf4j-jdk14/1.6.1/ae71d3fabc6f10b279051948a9269e0fd6300419/vaadin-slf4j-jdk14-1.6.1-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/com.vaadin.external.slf4j/vaadin-slf4j-jdk14/1.6.1/c57b4d7edd92cd859014c7a6c34b0aef5afb2854/vaadin-slf4j-jdk14-1.6.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/8dacf9514f0c707cbbcdd6fd699e8940d42fb54e/slf4j-simple-1.7.25.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/4e93a4a1e34a8244b264cd3d46c244fca1083829/slf4j-simple-1.7.25-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/af3cd3ad1ea4b08b27b54f12529b4bf343bc5ca1/slf4j-simple-1.7.25-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/8dacf9514f0c707cbbcdd6fd699e8940d42fb54e/slf4j-simple-1.7.25.jar!/"/>
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/4e93a4a1e34a8244b264cd3d46c244fca1083829/slf4j-simple-1.7.25-javadoc.jar!/"/>
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///home/mdre/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/af3cd3ad1ea4b08b27b54f12529b4bf343bc5ca1/slf4j-simple-1.7.25-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+  <component name="ModuleRootManager"/>
+</module>

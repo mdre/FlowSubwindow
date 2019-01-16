@@ -1,0 +1,116 @@
+// https://devsoap.com/using-webcomponents-in-vaadin-with-gradle/
+// para crear el componente:
+// gradle vaadinCreateComponent --name SubWindowDesktop --package com.awesomecontrols.subwindow --tag div
+//
+// los recursos se deben agregar en /src/main/resources/META-INF/resources/frontend/...
+// https://vaadin.com/blog/vaadin-10-and-static-resources
+
+
+plugins {
+    id 'java'
+    id 'org.gretty' version '2.3.0'
+    id 'com.devsoap.vaadin-flow' version '1.0.0.RC4'
+}
+apply plugin: 'maven'
+
+// ejecutar: gradle idea 
+// para que inicialize el proyecto y baje los javadocs.
+apply plugin: 'idea'
+idea{
+    module{
+        downloadJavadoc=true
+    }
+}
+
+vaadin {
+   version '12.+'          // Vaadin version to use
+   productionMode false    // Is the component built for production use
+}
+//vaadin.version=11
+println "***************************************************************"
+println "SISTEMA: " + name
+println "VERSION: " + version
+println "***************************************************************"
+import java.text.SimpleDateFormat
+def getCurrentTimestamp ()
+{
+  Date today = new Date ()
+  SimpleDateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm:ss")
+  return df.format (today)
+}
+
+println getCurrentTimestamp()
+println "---------------------------------------------------------------"
+// incrementar automáticamente el buildNumber
+task autoBuildNumber {
+    doFirst {
+        File propertiesFile = new File('gradle.properties')
+        def lines = propertiesFile.readLines()
+
+        PrintWriter printWriter = new PrintWriter(propertiesFile)
+        
+        lines.each {String line ->
+            if (line.startsWith("version") ){
+                String versionNumber = line.tokenize("=")[1]
+                String[] versionParts = versionNumber.tokenize(".")
+                // recalcular el build 
+                versionNumber = versionParts[0]+\
+                                '.'+versionParts[1]+\
+                                '.'+versionParts[2]+
+                                '.'+( versionParts.length==4 ? (versionParts[3].toInteger()+1).toString():"1")
+                
+                line = "version="+versionNumber
+//                println line
+            }
+            printWriter.println(line)
+        }
+        printWriter.close()
+    }
+}
+
+
+
+
+// agregar la dependencia solo si no se trata de un release
+if (! project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("release") ) {
+    build.dependsOn autoBuildNumber
+}
+build.doLast {
+        println "***************************************************************"
+        println "SISTEMA: " + name
+        println "VERSION: " + version
+        println "***************************************************************"
+}
+
+repositories {
+    mavenLocal()
+    vaadin.repositories()
+    mavenCentral()
+}
+
+//println vaadin.bom()
+//println vaadin.core()
+//println vaadin.slf4j()
+dependencies {
+    compile vaadin.bom()
+    compile vaadin.core()
+    runtime vaadin.slf4j()
+    // compile ('org.slf4j:slf4j-simple:1.7.25:javadoc')
+    //   <configuration> vaadin.core()             // Vaadin core dependencies
+    //   <configuration> vaadin.platform()         // Vaadin platform dependencies
+    //   <configuration> vaadin.bom()              // Vaadin Bill-of-Materials dependency
+    //   <configuration> vaadin.dependency(..)     // Adds a single vaadin-* dependency
+}
+
+vaadinClientDependencies {
+    // bower 'PolymerElements/paper-slider'
+}
+
+//sourceSets {
+//    main {
+//        resources {
+//            srcDirs "src/main/webapp"
+//        }
+//    }
+//}
+
