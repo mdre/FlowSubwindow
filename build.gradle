@@ -12,6 +12,7 @@ plugins {
     id 'com.devsoap.vaadin-flow' version '1.0.0.RC4'
 }
 apply plugin: 'maven'
+apply plugin: 'signing'
 
 // ejecutar: gradle idea 
 // para que inicialize el proyecto y baje los javadocs.
