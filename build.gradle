@@ -114,3 +114,145 @@ vaadinClientDependencies {
 //    }
 //}
 
+
+test {
+    testLogging {
+        // Make sure output from
+        // standard out or error is shown
+        // in Gradle output.
+        showStandardStreams = true
+ 
+        // Or we use events method:
+        // events 'standard_out', 'standard_error'
+ 
+        // Or set property events:
+        // events = ['standard_out', 'standard_error']
+ 
+        // Instead of string values we can
+        // use enum values:
+        // events org.gradle.api.tasks.testing.logging.TestLogEvent.STANDARD_OUT,
+        //        org.gradle.api.tasks.testing.logging.TestLogEvent.STANDARD_ERROR,
+    }
+}
+
+//jar {
+//    manifest {
+//        attributes(
+//      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+//      'Premain-Class':'net.odbogm.agent.TransparentDirtyDetectorAgent',
+//      'Agent-Class':'net.odbogm.agent.TransparentDirtyDetectorAgent',
+//      'Can-Redefine-Classes':true,
+//      'Can-Retransform-Classes':true
+//        )
+//    }
+//}
+
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    //    manifest {
+    //        attributes(
+    //      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+    //      'Premain-Class':'net.odbogm.agent.TransparentDirtyDetectorAgent',
+    //      'Agent-Class':'net.odbogm.agent.TransparentDirtyDetectorAgent',
+    //      'Can-Redefine-Classes':true,
+    //      'Can-Retransform-Classes':true
+    //        )
+    //    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
+// de acuerdo a la guía de 
+// http://central.sonatype.org/pages/gradle.html
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    //required { gradle.taskGraph.hasTask("uploadArchives")}
+    
+    //    ext."signing.keyId"= credentials.gpgKeyId
+    //    ext."signing.password"= credentials.gpgKeyPassword
+    //    ext."signing.secretKeyRingFile" = credentials.gpgKeyRingFile                
+
+    //    println ext."signing.keyId"
+    
+    sign(configurations.archives)
+}
+
+
+
+
+
+nexusStaging {
+    packageGroup = "com.github.mdre" //optional if packageGroup == project.getGroup()
+    //    stagingProfileId = "yourStagingProfileId" //when not defined will be got from server using "packageGroup"
+}
+
+//sube a nexus
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment {
+                MavenDeployment deployment -> signing.signPom(deployment) 
+            }
+            
+            repository(url: "$sonatypeURLRelease") {
+                authentication(userName: credentials.sonatypeUser, password: credentials.sonatypePassword)
+            }
+            
+            snapshotRepository(url: "$sonatypeURLSnapshot") {
+                authentication(userName: credentials.sonatypeUser, password: credentials.sonatypePassword)
+            }
+            
+            pom.groupId = 'com.github.mdre'
+            pom.artifactId = 'flowsubwindow'
+            
+            
+            pom.project {
+                name 'Vaadin Flow Subwindow component'
+                packaging 'jar'
+                // optionally artifactId can be defined here 
+                description 'a Subwindow Desktop and Subwindow component for Vaadin 10+.'
+                url 'https://github.com/mdre/flowsubwindow'
+
+                scm {
+                    connection 'scm:git:git://github.com/mdre/flowsubwindow.git'
+                    developerConnection 'scm:git:ssh://github.com/mdre/flowsubwindow.git'
+                    url 'https://github.com/mdre/flowsubwindow'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'mdre'
+                        name 'Marcelo D. RE'
+                        email 'marcelo.re@gmail.com'
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+createReleaseTag.dependsOn ':uploadArchives'
