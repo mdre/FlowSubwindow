@@ -18,6 +18,10 @@ plugins {
 apply plugin: 'maven'
 apply plugin: 'signing'
 
+def sonatypeUser = credentials.sonatypeUser
+def sonatypePassword = credentials.sonatypePassword
+
+
 // ejecutar: gradle idea 
 // para que inicialize el proyecto y baje los javadocs.
 apply plugin: 'idea'
