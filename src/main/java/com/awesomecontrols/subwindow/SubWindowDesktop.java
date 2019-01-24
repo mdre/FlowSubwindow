@@ -51,6 +51,10 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
         // getElement().getStyle().set("background-color","#fffdb2");
     }
 
+    /**
+     * Add a subwindow to the desktop
+     * @param subw 
+     */
     public void add(SubWindow subw) {
         desktop.add(subw); 
         
@@ -72,8 +76,12 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     }
 
     /**
+     * Return the offset in pixels to apply to the subwindow when is added to the desktop.
+     * 
+     * Spanish:
      * Retorna el desplazamiento en pixels que se aplica a una ventana cuando se agrega
-     * al desktop
+     * al desktop.
+     * 
      * @return 
      */
     public int getWindowsOffset() {
@@ -81,8 +89,12 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     }
 
     /**
+     * Set the default offset in pixels to apply to added subwindows.
+     * 
+     * Spanish:
      * Establece el desplazamiento en pixels por defecto que tendrán las ventanas
      * que se agregen al desktop
+     * 
      * @param windowsOffset 
      */
     public void setWindowsOffset(int windowsOffset) {
@@ -108,6 +120,14 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
         }
     }
 
+    /**
+     * Remove the subwindow from the desktop.
+     * 
+     * Spanish:
+     * Elimina la ventana del desktop.
+     * 
+     * @param subw 
+     */
     public void remove(SubWindow subw) {
         this.desktop.remove(subw);
         for (Iterator<WDLabel> iterator = this.windows.iterator(); iterator.hasNext();) {

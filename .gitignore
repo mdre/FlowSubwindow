@@ -9,3 +9,4 @@ rebel.xml
 *.log
 .*
 !.gitignore
+/toVaadinDirectory/

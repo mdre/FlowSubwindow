@@ -111,10 +111,17 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
         this.restoreButton.getStyle().set("display", "none");
     }
     
+    /**
+     * Set the subwindow desktop for the subwindow.
+     * 
+     * @param swd
+     * @return this
+     */
     SubWindow setSubWindowDesktop(SubWindowDesktop swd) {
         this.subwindowDesktop = swd;
         return this;
     }
+
     
     void setDesktopId(int id) {
         this.subwindowDesktopId = id;
@@ -124,24 +131,46 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
         return this.subwindowDesktopId;
     }
     
+    /**
+     * Set the subwindow content
+     * 
+     * @param content 
+     */
     public void setContent(Component content) {
         this.content.removeAll();
         this.content.add(content);
     }
     
+    
+    /**
+     * Set the subwindow title.
+     * @return 
+     */
     public String getTitle() {
         return this.title;
     }
     
+    /**
+     * Set the subwindow top position in pixels
+     * @param top 
+     */
     public void setTop(int top) {
         this.top = top;
         this.subwindow.getStyle().set("top", ""+top+"px");
     }
 
+    /**
+     * Return the subwindow top position in pixels
+     * @return top position
+     */
     public int getTop() {
         return top;
     }
 
+    /**
+     * Return the left position in pixels.
+     * @return left position
+     */
     public int getLeft() {
         return left;
     }
@@ -150,6 +179,11 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
 //        return widht;
 //    }
     
+    /**
+     * Set the left position in pixels.
+     * 
+     * @param left 
+     */
     public void setLeft(int left) {
         this.left = left;
         this.subwindow.getStyle().set("left", ""+left+"px");
@@ -157,39 +191,35 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
 
     @Override
     public void setSizeUndefined() {
-        HasSize.super.setSizeUndefined(); //To change body of generated methods, choose Tools | Templates.
+        HasSize.super.setSizeUndefined(); 
     }
 
     @Override
     public void setSizeFull() {
-        HasSize.super.setSizeFull(); //To change body of generated methods, choose Tools | Templates.
+        HasSize.super.setSizeFull(); 
     }
 
     @Override
     public String getHeight() {
-        return HasSize.super.getHeight(); //To change body of generated methods, choose Tools | Templates.
+        return HasSize.super.getHeight(); 
     }
 
     @Override
     public void setHeight(String height) {
-        //HasSize.super.setHeight(height); //To change body of generated methods, choose Tools | Templates.
         this.subwindow.getStyle().set("height", height);
         this.height = height;
     }
 
     @Override
     public String getWidth() {
-        return HasSize.super.getWidth(); //To change body of generated methods, choose Tools | Templates.
+        return HasSize.super.getWidth(); 
     }
 
     @Override
     public void setWidth(String width) {
-        //HasSize.super.setWidth(width); //To change body of generated methods, choose Tools | Templates.
         this.subwindow.getStyle().set("width", width);
         this.widht = widht;
     }
-    
-    
     
     
     @ClientCallable
@@ -227,7 +257,12 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
         this.subwindow.getStyle().set("z-index", ""+idx);
     }
     
-    SubWindow setClassStyle(String style) {
+    /**
+     * Set the subwindow css class style
+     * @param style
+     * @return this
+     */
+    public SubWindow setClassStyle(String style) {
         this.subwindow.setClassName(style);
         return this;
     }
