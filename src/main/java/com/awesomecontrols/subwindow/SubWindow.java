@@ -21,6 +21,8 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,7 +34,8 @@ import java.util.logging.Logger;
 @Tag("sub-window")
 @StyleSheet("frontend://bower_components/sub-window/cards.css")
 @HtmlImport("bower_components/sub-window/sub-window.html")
-public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasComponents, HasSize, HasTheme, HasStyle {
+public class SubWindow extends PolymerTemplate<SubWindowModel> 
+        implements ISubWindowEvents, HasComponents, HasSize, HasTheme, HasStyle {
     private final static Logger LOGGER = Logger.getLogger(SubWindow.class .getName());
     private static final long serialVersionUID = -8955205816352713674L;
     static {
@@ -43,12 +46,13 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
 
     private SubWindowDesktop subwindowDesktop;
     
-    
     private SubWindowState state = SubWindowState.NORMAL;
     /**
      * número de identificación asignado por el desktop.
      */
     private int subwindowDesktopId;
+
+    List<ISubWindowEvents> eventListeners = new ArrayList<>();
     
     int top;
     int left;
@@ -58,7 +62,6 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
     
     String title;
     
-    boolean grayOnFocusLost = true;
     
     // referencias al modelo html
     @Id("subwindow")
@@ -71,11 +74,23 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
     @Id("caption")
     private Div caption;
     
+    @Id("custom-controls")
+    private Div customControls;
+    
+    
+    
+    @Id("minimizeButton")
+    private Image minimizeButton;
+    
     @Id("maximizeButton")
     private Image maximizeButton;
     
     @Id("restoreButton")
     private Image restoreButton;
+    
+    @Id("closeButton")
+    private Image closeButton;
+    
     //-----------------------------------------------------
     
     
@@ -86,7 +101,9 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
     private Div resize;
     //-----------------------------------------------------
     
+    boolean grayOnFocusLost = true;
     Div greyGlass = new Div();
+    
     private boolean inFront = true;
     
     public SubWindow(String title) {
@@ -267,18 +284,29 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
         return this;
     }
     
+    @Override
     @ClientCallable
-    public void onCloseClick() {
+    public void close() {
         this.subwindowDesktop.remove(this);
+        // disparar el evento.
+        for (ISubWindowEvents el : this.eventListeners) {
+            el.close();
+        }
     }
     
+    @Override
     @ClientCallable
-    public void onMinimizeClick() {
+    public void minimize() {
         this.getStyle().set("display", "none");
+        // disparar el evento.
+        for (ISubWindowEvents el : this.eventListeners) {
+            el.minimize();
+        }
     }
     
+    @Override
     @ClientCallable
-    public void onMaximizeClick() {
+    public void maximize() {
         
         // preserve the size;
         if (this.widht==null || this.widht.isEmpty()) {
@@ -299,10 +327,16 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
 //        this.maximizeButton.setVisible(false);
 //        this.restoreButton.setVisible(true);
         this.restoreButton.getStyle().set("display", "inline-block");
+        
+        // disparar el evento.
+        for (ISubWindowEvents el : this.eventListeners) {
+            el.maximize();
+        }
     }
     
+    @Override
     @ClientCallable
-    public void onRestoreClick() {
+    public void restore() {
         this.state = SubWindowState.NORMAL;
         LOGGER.log(Level.INFO, "Restore");
         LOGGER.log(Level.INFO, "L:"+this.left+", T:"+this.top+" - w:"+this.widht+", h:"+this.height);
@@ -314,6 +348,11 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
 //        this.restoreButton.setVisible(false);
 //        this.maximizeButton.setVisible(true);
         this.maximizeButton.getStyle().set("display", "inline-block");
+        
+        // disparar el evento.
+        for (ISubWindowEvents el : this.eventListeners) {
+            el.restore();
+        }
     }
     
     
@@ -333,5 +372,42 @@ public class SubWindow extends PolymerTemplate<SubWindowModel> implements HasCom
     
     public void show() {
         this.getStyle().set("display", "inline-block");
+    }
+    
+    /**
+     * Agrega un listener para los eventos de la ventana
+     * @param eventListener listener
+     */
+    public void addEventListener(ISubWindowEvents eventListener) {
+        if (this.eventListeners == null) {
+            this.eventListeners = new ArrayList<>();
+        }
+        this.eventListeners.add(eventListener);
+    }
+    
+    public void removeEventListener(ISubWindowEvents eventListener) {
+        if (this.eventListeners!=null) {
+            this.eventListeners.remove(eventListener);
+        }
+    }
+    
+    public void setMinimizeButtonVisible(boolean visible) {
+        this.minimizeButton.getStyle().set("display", visible?"inline-block":"none");
+    }
+    
+    public void setCloseButtonVisible(boolean visible) {
+        this.closeButton.getStyle().set("display", visible?"inline-block":"none");
+    }
+    
+    public void setMaximizeButtonVisible(boolean visible) {
+        this.maximizeButton.getStyle().set("display", visible?"inline-block":"none");
+    }
+    
+    /**
+     * Agrega el componente a la barra de título de la ventana.
+     * @param c componente a agregar
+     */
+    public void addCustomTitleControl(Component c) {
+        this.customControls.add(c);
     }
 }

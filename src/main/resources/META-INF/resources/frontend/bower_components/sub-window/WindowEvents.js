@@ -181,25 +181,25 @@ function onWindowClick(elementToDrag, event) {
 
 function onCloseClick(elementToDrag, event) {
     var flowElement = elementToDrag.parentNode.host;
-    flowElement.$server.onCloseClick();
+    flowElement.$server.close();
     event.stopPropagation();
 }
 
 function onMinimizeClick(elementToDrag, event) {
     var flowElement = elementToDrag.parentNode.host;
-    flowElement.$server.onMinimizeClick();
+    flowElement.$server.minimize();
     event.stopPropagation();
 }
 
 function onMaximizeClick(elementToDrag, event) {
     var flowElement = elementToDrag.parentNode.host;
-    flowElement.$server.onMaximizeClick();
+    flowElement.$server.maximize();
     event.stopPropagation();
 }
 
 function onRestoreClick(elementToDrag, event) {
     var flowElement = elementToDrag.parentNode.host;
-    flowElement.$server.onRestoreClick();
+    flowElement.$server.restore();
     event.stopPropagation();
 }
 

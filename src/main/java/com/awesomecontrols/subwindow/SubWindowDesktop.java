@@ -45,7 +45,8 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     /** 
      * Default state for new added windows
      */
-    private SubWindowState defaultWindowState = SubWindowState.NORMAL;
+    private SubWindowState defaultWindowState = null;
+
     
     public SubWindowDesktop() {
         // getElement().getStyle().set("background-color","#fffdb2");
@@ -71,6 +72,14 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
         subw.setLeft(this.windowsOffset * this.windows.size());
         
         bringToFront(subw);
+        
+        if (this.defaultWindowState==SubWindowState.NORMAL) {
+            subw.restore();
+        } else if (this.defaultWindowState==SubWindowState.MAXIMIZED) {
+            subw.maximize();
+        } else if (this.defaultWindowState==SubWindowState.MINIMIZED) {
+            subw.minimize();
+        }
         
         this.windowsBar.add(wdl);
     }
@@ -141,5 +150,22 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
         
     }
     
+    /**
+     * Return de defaultWindowState to set for the new added subwindows.
+     * It is null, do nothing. Otherwise it set the state to the added subwindow
+     * @return 
+     */
+    public SubWindowState getDefaultWindowState() {
+        return defaultWindowState;
+    }
+
+    /**
+     * Set the default window state for the new added subwindows.
+     * If is set to null, do nothing.
+     * @param defaultWindowState 
+     */
+    public void setDefaultWindowState(SubWindowState defaultWindowState) {
+        this.defaultWindowState = defaultWindowState;
+    }
     
 }

@@ -9,10 +9,9 @@ package com.awesomecontrols.subwindow;
  *
  * @author Marcelo D. Ré {@literal <marcelo.re@gmail.com>}
  */
-public enum SubWindowState {
-    NORMAL,
-    MAXIMIZED,
-    MINIMIZED
-    //HIDDEN
-    
+public interface ISubWindowEvents {
+    void close();
+    void minimize();
+    void maximize();
+    void restore();
 }

@@ -9,7 +9,7 @@
 plugins {
     id 'java'
     id 'org.gretty' version '2.3.0'
-    id 'com.devsoap.vaadin-flow' version '1.0.0.RC4'
+    id 'com.devsoap.vaadin-flow' version '1.0.0.RC7'
     
     id 'net.researchgate.release' version '2.6.0'
     id 'nu.studer.credentials' version '1.0.0'
@@ -32,8 +32,8 @@ idea{
 }
 
 vaadin {
-   version '12.0.0'          // Vaadin version to use
-   productionMode false    // Is the component built for production use
+    version '12.0.0'          // Vaadin version to use
+    productionMode false    // Is the component built for production use
 }
 
 // desactivo la generación de javadoc en los proyectos que tengan la tarea
@@ -47,9 +47,9 @@ println "***************************************************************"
 import java.text.SimpleDateFormat
 def getCurrentTimestamp ()
 {
-  Date today = new Date ()
-  SimpleDateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm:ss")
-  return df.format (today)
+    Date today = new Date ()
+    SimpleDateFormat df = new SimpleDateFormat ("dd/MM/yyyy hh:mm:ss")
+    return df.format (today)
 }
 
 println getCurrentTimestamp()
@@ -73,7 +73,7 @@ task autoBuildNumber {
                                 '.'+( versionParts.length==4 ? (versionParts[3].toInteger()+1).toString():"1")
                 
                 line = "version="+versionNumber
-//                println line
+                //                println line
             }
             printWriter.println(line)
         }
@@ -89,10 +89,10 @@ if (! project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("
     build.dependsOn autoBuildNumber
 }
 build.doLast {
-        println "***************************************************************"
-        println "SISTEMA: " + name
-        println "VERSION: " + version
-        println "***************************************************************"
+    println "***************************************************************"
+    println "SISTEMA: " + name
+    println "VERSION: " + version
+    println "***************************************************************"
 }
 
 repositories {
@@ -182,56 +182,60 @@ task fatJar(type: Jar) {
 //===============================================================================
 // Vaadin Directory stuff
 //===============================================================================
-def copyFile(String srcF, String destF) {
-    File src = new File(srcF)
-    File dest = new File(destF)
-    if (src.isFile()) {
-        dest << src.bytes
-    } else {
-        throw new Exception("el archivo "+srcF+" no existe!")
-    }
-}
 
 task createVaadinDirectoryRelease(type: Zip) {
-    String VAADINDIRECTORY = "toVaadinDirectory"
-    String vaadinDistDir = VAADINDIRECTORY+"/dist"
-    
-    File toVaadinDirectory = new File(VAADINDIRECTORY)
-    File fVaadinDistDir = new File(vaadinDistDir)
-    File vdMetaInf = new File(vaadinDistDir+"/META-INF")
-    // borrar cualquier referencia previa
-    if (toVaadinDirectory.isDirectory()) {
-        toVaadinDirectory.deleteDir()
+    ext.copyFile = {String srcF, String destF ->
+        File src = new File(srcF)
+        File dest = new File(destF)
+        if (src.isFile()) {
+            dest << src.bytes
+        } else {
+            throw new Exception("el archivo "+srcF+" no existe!")
+        }
     }
-    // crear el directorio
-    toVaadinDirectory.mkdir()
-    fVaadinDistDir.mkdir()
-    vdMetaInf.mkdir()
-    
-    // crear el manifest
-    File vdManifest = new File(vaadinDistDir+"/META-INF/MANIFEST.MF")
-    vdManifest.write("Manifest-Version: 1.0\n")
-    vdManifest << "Vaadin-Package-Version: 1\n"
-    vdManifest << "Vaadin-Addon: flowsubwindow-"+version+".jar\n"
-    vdManifest << "Implementation-Vendor: MarceloDRe \n"
-    vdManifest << "Implementation-Title: SubWindowDesktop and Subwindow component\n"
-    vdManifest << "Implementation-Version: "+version+"\n"
-    
-    // copiar los archivos al directorio
-    // requiere jar, sourceJar y javadoc y le readme.md
-    copyFile("build/libs/"+project.name+"-"+version+".jar", vaadinDistDir+"/"+project.name+"-"+version+".jar")
-    copyFile("build/libs/"+project.name+"-"+version+"-sources.jar", vaadinDistDir+"/"+project.name+"-"+version+"-sources.jar")
-    copyFile("build/libs/"+project.name+"-"+version+"-javadoc.jar", vaadinDistDir+"/"+project.name+"-"+version+"-javadoc.jar")
-    copyFile("./README.md", vaadinDistDir+"/README.md")
-    
-    
-    // crear el zip para subir
-    // parámetros específicos del task Zip
-    archiveName = project.name+"-"+version+".zip"
-    destinationDir = file(VAADINDIRECTORY)
 
-    from vaadinDistDir
+    doLast {
+        String VAADINDIRECTORY = "toVaadinDirectory"
+        String vaadinDistDir = VAADINDIRECTORY+"/dist"
+    
+        File toVaadinDirectory = new File(VAADINDIRECTORY)
+        File fVaadinDistDir = new File(vaadinDistDir)
+        File vdMetaInf = new File(vaadinDistDir+"/META-INF")
+        // borrar cualquier referencia previa
+        if (toVaadinDirectory.isDirectory()) {
+            toVaadinDirectory.deleteDir()
+        }
+        // crear el directorio
+        toVaadinDirectory.mkdir()
+        fVaadinDistDir.mkdir()
+        vdMetaInf.mkdir()
+    
+        // crear el manifest
+        File vdManifest = new File(vaadinDistDir+"/META-INF/MANIFEST.MF")
+        vdManifest.write("Manifest-Version: 1.0\n")
+        vdManifest << "Vaadin-Package-Version: 1\n"
+        vdManifest << "Vaadin-Addon: flowsubwindow-"+version+".jar\n"
+        vdManifest << "Implementation-Vendor: MarceloDRe \n"
+        vdManifest << "Implementation-Title: SubWindowDesktop and Subwindow component\n"
+        vdManifest << "Implementation-Version: "+version+"\n"
+    
+        // copiar los archivos al directorio
+        // requiere jar, sourceJar y javadoc y le readme.md
+        copyFile("build/libs/"+project.name+"-"+version+".jar", vaadinDistDir+"/"+project.name+"-"+version+".jar")
+        copyFile("build/libs/"+project.name+"-"+version+"-sources.jar", vaadinDistDir+"/"+project.name+"-"+version+"-sources.jar")
+        copyFile("build/libs/"+project.name+"-"+version+"-javadoc.jar", vaadinDistDir+"/"+project.name+"-"+version+"-javadoc.jar")
+        copyFile("./README.md", vaadinDistDir+"/README.md")
+    
+    
+        // crear el zip para subir
+        // parámetros específicos del task Zip
+        archiveName = project.name+"-"+version+".zip"
+        destinationDir = file(VAADINDIRECTORY)
+
+        from vaadinDistDir
+    }
 }
+
 
 // de acuerdo a la guía de 
 // http://central.sonatype.org/pages/gradle.html
