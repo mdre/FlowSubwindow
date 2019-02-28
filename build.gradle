@@ -193,52 +193,54 @@ ext.copyFile = {String srcF, String destF ->
 }
 
 task createVaadinDirectoryRelease(type: Zip) {
-    group = 'Welcome'
-    description = 'Crear un paquete para subir a Vaadin Directory'
-    
-    println "preparando el paquete..."
-        
-    String VAADINDIRECTORY = "toVaadinDirectory"
-    String vaadinDistDir = VAADINDIRECTORY+"/dist"
-    
-    File toVaadinDirectory = new File(VAADINDIRECTORY)
-    File fVaadinDistDir = new File(vaadinDistDir)
-    File vdMetaInf = new File(vaadinDistDir+"/META-INF")
-    // borrar cualquier referencia previa
-    if (toVaadinDirectory.isDirectory()) {
-        toVaadinDirectory.deleteDir()
-    }
-    // crear el directorio
-    toVaadinDirectory.mkdir()
-    fVaadinDistDir.mkdir()
-    vdMetaInf.mkdir()
-    
-    // crear el manifest
-    println "creando el manifest..."
-    File vdManifest = new File(vaadinDistDir+"/META-INF/MANIFEST.MF")
-    vdManifest.write("Manifest-Version: 1.0\n")
-    vdManifest << "Vaadin-Package-Version: 1\n"
-    vdManifest << "Vaadin-Addon: flowsubwindow-"+version+".jar\n"
-    vdManifest << "Implementation-Vendor: MarceloDRe \n"
-    vdManifest << "Implementation-Title: SubWindowDesktop and Subwindow component\n"
-    vdManifest << "Implementation-Version: "+version+"\n"
-    
-    // copiar los archivos al directorio
-    // requiere jar, sourceJar y javadoc y le readme.md
-    println "copiando los archivos..."
-    copyFile("build/libs/"+project.name+"-"+version+".jar", vaadinDistDir+"/"+project.name+"-"+version+".jar")
-    copyFile("build/libs/"+project.name+"-"+version+"-sources.jar", vaadinDistDir+"/"+project.name+"-"+version+"-sources.jar")
-    copyFile("build/libs/"+project.name+"-"+version+"-javadoc.jar", vaadinDistDir+"/"+project.name+"-"+version+"-javadoc.jar")
-    copyFile("./README.md", vaadinDistDir+"/README.md")
-    
-    println "comprimiendo..."
-    // crear el zip para subir
-    // parámetros específicos del task Zip
-    archiveName = project.name+"-"+version+".zip"
-    destinationDir = file(VAADINDIRECTORY)
+    doLast {
+        group = 'Welcome'
+        description = 'Crear un paquete para subir a Vaadin Directory'
 
-    from vaadinDistDir
-    println "finalizado."
+        println "preparando el paquete..."
+
+        String VAADINDIRECTORY = "toVaadinDirectory"
+        String vaadinDistDir = VAADINDIRECTORY+"/dist"
+
+        File toVaadinDirectory = new File(VAADINDIRECTORY)
+        File fVaadinDistDir = new File(vaadinDistDir)
+        File vdMetaInf = new File(vaadinDistDir+"/META-INF")
+        // borrar cualquier referencia previa
+        if (toVaadinDirectory.isDirectory()) {
+            toVaadinDirectory.deleteDir()
+        }
+        // crear el directorio
+        toVaadinDirectory.mkdir()
+        fVaadinDistDir.mkdir()
+        vdMetaInf.mkdir()
+
+        // crear el manifest
+        println "creando el manifest..."
+        File vdManifest = new File(vaadinDistDir+"/META-INF/MANIFEST.MF")
+        vdManifest.write("Manifest-Version: 1.0\n")
+        vdManifest << "Vaadin-Package-Version: 1\n"
+        vdManifest << "Vaadin-Addon: flowsubwindow-"+version+".jar\n"
+        vdManifest << "Implementation-Vendor: MarceloDRe \n"
+        vdManifest << "Implementation-Title: SubWindowDesktop and Subwindow component\n"
+        vdManifest << "Implementation-Version: "+version+"\n"
+
+        // copiar los archivos al directorio
+        // requiere jar, sourceJar y javadoc y le readme.md
+        println "copiando los archivos..."
+        copyFile("build/libs/"+project.name+"-"+version+".jar", vaadinDistDir+"/"+project.name+"-"+version+".jar")
+        copyFile("build/libs/"+project.name+"-"+version+"-sources.jar", vaadinDistDir+"/"+project.name+"-"+version+"-sources.jar")
+        copyFile("build/libs/"+project.name+"-"+version+"-javadoc.jar", vaadinDistDir+"/"+project.name+"-"+version+"-javadoc.jar")
+        copyFile("./README.md", vaadinDistDir+"/README.md")
+
+        println "comprimiendo..."
+        // crear el zip para subir
+        // parámetros específicos del task Zip
+        archiveName = project.name+"-"+version+".zip"
+        destinationDir = file(VAADINDIRECTORY)
+
+        from vaadinDistDir
+        println "finalizado."
+    }
 }
 
 
