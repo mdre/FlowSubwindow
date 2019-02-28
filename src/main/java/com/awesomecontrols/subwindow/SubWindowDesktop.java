@@ -36,7 +36,7 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     List<WDLabel> windows = new ArrayList<>();
     private int subwindowsId = 0;
     
-    private int ZTOP = 100;
+    private int ZTOP = 50;
     private int ZLOWER = 10;
     
     // establece el desplazamiento por defecto para las ventanas que se agregan.

@@ -17,3 +17,5 @@ Features:
 
 TODO: 
 - set theme for components.
+- disable resize.
+- close from tab bar.

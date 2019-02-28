@@ -29,15 +29,14 @@ import java.util.logging.Logger;
 /**
  *
  * @author Marcelo D. Ré {@literal <marcelo.re@gmail.com>}
- * https://www.webdesign.org/web-programming/javascript/creating-a-floating-window.10895.html
  */
 @Tag("sub-window")
 @StyleSheet("frontend://bower_components/sub-window/cards.css")
 @HtmlImport("bower_components/sub-window/sub-window.html")
 public class SubWindow extends PolymerTemplate<SubWindowModel> 
         implements ISubWindowEvents, HasComponents, HasSize, HasTheme, HasStyle {
-    private final static Logger LOGGER = Logger.getLogger(SubWindow.class .getName());
     private static final long serialVersionUID = -8955205816352713674L;
+    private final static Logger LOGGER = Logger.getLogger(SubWindow.class .getName());
     static {
         if (LOGGER.getLevel() == null) {
             LOGGER.setLevel(Level.FINER);
@@ -401,6 +400,10 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     public void setMaximizeButtonVisible(boolean visible) {
         this.maximizeButton.getStyle().set("display", visible?"inline-block":"none");
+    }
+    
+    public void setResizable(boolean visible) {
+        this.resize.getStyle().set("display", visible?"inline-block":"none");
     }
     
     /**
