@@ -18,8 +18,8 @@ public interface SubWindowModel extends TemplateModel {
     void setTop(int top);
     void setLeft(int left);
     
-    void setTitle(String title);
-    String getTitle();
+//    void setTitle(String title);
+//    String getTitle();
     
     @ClientCallable 
     void updatePosition(int top, int left);

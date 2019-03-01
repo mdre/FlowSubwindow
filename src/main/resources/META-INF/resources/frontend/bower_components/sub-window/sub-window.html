@@ -13,7 +13,6 @@
              draggable="true"
              onClick="onWindowClick(this, event);"
              > 
-
             <div id="header" 
                  class="subwindow-header"
                  onMouseDown="beginDrag(this.parentNode, event);"
@@ -53,9 +52,7 @@
                          onClick="onCloseClick(this.parentNode.parentNode.parentNode, event);"
                          src="frontend/bower_components/sub-window/icons/baseline-close-24px.svg"
                          />
-                    
                 </div>
-            
             </div>
             <div id="content" 
                  class="subwindow-content"
@@ -79,14 +76,14 @@
             static get is() {
                 return 'sub-window';
             }
-            static get properties() {
-                return {
-                    prop1: {
-                        type: String,
-                        value: 'sub-window'
-                    }
-                };
-            }
+//            static get properties() {
+//                return {
+//                    prop1: {
+//                        type: String,
+//                        value: 'sub-window'
+//                    }
+//                };
+//            }
 
         }
 

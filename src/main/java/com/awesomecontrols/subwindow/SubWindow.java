@@ -108,7 +108,6 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public SubWindow(String title) {
         setId("subwindow");
         this.title = title;
-        
         this.caption.removeAll();
         this.caption.add(new Label(this.title));
         
@@ -404,6 +403,15 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     public void setResizable(boolean visible) {
         this.resize.getStyle().set("display", visible?"inline-block":"none");
+    }
+    
+    /**
+     * Set the resize size. 
+     * @param size 
+     */
+    public void setResizeSize(int size) {
+        this.resize.getStyle().set("width",""+size+"px"); 
+        this.resize.getStyle().set("height",""+size+"px"); 
     }
     
     /**
