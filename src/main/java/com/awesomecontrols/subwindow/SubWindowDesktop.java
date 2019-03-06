@@ -110,17 +110,20 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
         this.windowsOffset = windowsOffset;
     }
     
-    void bringToFront(SubWindow sw) {
+    public void bringToFront(SubWindow sw) {
         LOGGER.log(Level.INFO, "bringToFront: "+sw.getTitle());
         for (WDLabel wdl : this.windows) {
             SubWindow window = wdl.getSw();
             if (window == sw) {
-                LOGGER.log(Level.INFO, "TOP: "+window.getTitle());
+                LOGGER.log(Level.FINER, "*******************************************");
+                LOGGER.log(Level.FINER, "TOP: "+window.getTitle());
+                LOGGER.log(Level.FINER, "*******************************************");
                 window.setZIndex(ZTOP);
+//                window.focus();
                 window.setClassStyle("card card-4");
                 wdl.setClassName("wdlabel-caption-focus");
             } else {
-                LOGGER.log(Level.INFO, "low: "+window.getTitle());
+                LOGGER.log(Level.FINER, "low: "+window.getTitle());
                 window.setZIndex(ZLOWER);
                 window.setClassStyle("card card-1");
                 window.focusLost();

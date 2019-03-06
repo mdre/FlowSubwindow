@@ -8,6 +8,7 @@ package com.awesomecontrols.subwindow;
 
 import com.vaadin.flow.component.ClientCallable;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Focusable;
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
@@ -34,12 +35,12 @@ import java.util.logging.Logger;
 @StyleSheet("frontend://bower_components/sub-window/cards.css")
 @HtmlImport("bower_components/sub-window/sub-window.html")
 public class SubWindow extends PolymerTemplate<SubWindowModel> 
-        implements ISubWindowEvents, HasComponents, HasSize, HasTheme, HasStyle {
+        implements ISubWindowEvents, HasComponents, HasSize, HasTheme, HasStyle, Focusable {
     private static final long serialVersionUID = -8955205816352713674L;
     private final static Logger LOGGER = Logger.getLogger(SubWindow.class .getName());
     static {
         if (LOGGER.getLevel() == null) {
-            LOGGER.setLevel(Level.FINER);
+            LOGGER.setLevel(Level.INFO);
         }
     }
 
@@ -239,7 +240,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     @ClientCallable
     private void updatePosition(int top, int left){ 
-        LOGGER.log(Level.INFO, ""+top+","+left);
+        LOGGER.log(Level.FINER, ""+top+","+left);
         this.top = top;
         this.left = left;
     };
@@ -249,11 +250,12 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     private void updateSize(String w, String h){ 
         this.widht = w;
         this.height = h;
-        LOGGER.log(Level.INFO, "update size: w: "+this.widht+" h: "+this.height);
+        LOGGER.log(Level.FINER, "update size: w: "+this.widht+" h: "+this.height);
     };
     
     @ClientCallable
     public void onWindowsClick() {
+        LOGGER.log(Level.FINER, "Click Event!");
         this.bringToFront();
     }
     
@@ -265,7 +267,10 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         if (this.grayOnFocusLost) {
             this.subwindow.remove(greyGlass);
         }
+        this.focus();
+        this.setTabIndex(-1);
     }
+    
     
     void setZIndex(int idx) {
         this.zindex = idx;

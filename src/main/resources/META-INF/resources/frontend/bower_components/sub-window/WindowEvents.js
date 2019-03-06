@@ -174,31 +174,40 @@ function beginResize(elementToResize, event) {
     }
 }
 
-function onWindowClick(elementToDrag, event) {
-    var flowElement = elementToDrag.parentNode.host;
-    flowElement.$server.onWindowsClick();
+function onWindowClick(element, event) {
+    event.stopPropagation();
+    // verificar que se haya hecho clic en la ventana.
+    // busco el primer elemento cuyo ID != "" y verifico que sea un subwindow.
+    var i=0;
+    while (event.path[i].id=="") {
+        i++;
+    }
+    if (event.path[i].id=="subwindow") {
+        var flowElement = element.parentNode.host;
+        flowElement.$server.onWindowsClick();
+    }
 }
 
-function onCloseClick(elementToDrag, event) {
-    var flowElement = elementToDrag.parentNode.host;
+function onCloseClick(element, event) {
+    var flowElement = element.parentNode.host;
     flowElement.$server.close();
     event.stopPropagation();
 }
 
-function onMinimizeClick(elementToDrag, event) {
-    var flowElement = elementToDrag.parentNode.host;
+function onMinimizeClick(element, event) {
+    var flowElement = element.parentNode.host;
     flowElement.$server.minimize();
     event.stopPropagation();
 }
 
-function onMaximizeClick(elementToDrag, event) {
-    var flowElement = elementToDrag.parentNode.host;
+function onMaximizeClick(element, event) {
+    var flowElement = element.parentNode.host;
     flowElement.$server.maximize();
     event.stopPropagation();
 }
 
-function onRestoreClick(elementToDrag, event) {
-    var flowElement = elementToDrag.parentNode.host;
+function onRestoreClick(element, event) {
+    var flowElement = element.parentNode.host;
     flowElement.$server.restore();
     event.stopPropagation();
 }
