@@ -106,11 +106,17 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     private boolean inFront = true;
     
-    public SubWindow(String title) {
+    public SubWindow() {
         setId("subwindow");
-        this.title = title;
+        this.title = "subwindow";
         this.caption.removeAll();
         this.caption.add(new Label(this.title));
+        init();
+    }
+    
+    public SubWindow(String title) {
+        setId("subwindow");
+        this.setTitle(title);
         
         init();
     }
@@ -162,17 +168,30 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
      * Set the subwindow title.
      * @return 
      */
+    public SubWindow setTitle(String title) {
+        this.title = title;
+        this.caption.removeAll();
+        this.caption.add(new Label(this.title));
+        return this;
+    }
+    
+    /**
+     * Return the subwindow title
+     * @return 
+     */
     public String getTitle() {
         return this.title;
     }
     
     /**
      * Set the subwindow top position in pixels
-     * @param top 
+     * @param top in pixels
+     * @return  this
      */
-    public void setTop(int top) {
+    public SubWindow setTop(int top) {
         this.top = top;
         this.subwindow.getStyle().set("top", ""+top+"px");
+        return this;
     }
 
     /**
@@ -191,18 +210,29 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         return left;
     }
 
-//    public String getWidht() {
-//        return widht;
-//    }
     
     /**
      * Set the left position in pixels.
      * 
-     * @param left 
+     * @param left in pixels
+     * @return  this
      */
-    public void setLeft(int left) {
+    public SubWindow setLeft(int left) {
         this.left = left;
         this.subwindow.getStyle().set("left", ""+left+"px");
+        return this;
+    }
+    
+    /**
+     * Set the position in pixels
+     * @param left in pixels
+     * @param top in pixels
+     * @return this
+     */
+    public SubWindow setPosition(int left, int top) {
+        this.setTop(top);
+        this.setLeft(left);
+        return this;
     }
 
     @Override
@@ -225,6 +255,15 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.subwindow.getStyle().set("height", height);
         this.height = height;
     }
+    
+    /**
+     * Set the height in pixels
+     * @param h is the height in pixels
+     */
+    public void setHeight(int h) {
+        this.subwindow.getStyle().set("height", h+"px");
+        this.height = h+"px";
+    }
 
     @Override
     public String getWidth() {
@@ -232,11 +271,21 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     }
 
     @Override
-    public void setWidth(String width) {
-        this.subwindow.getStyle().set("width", width);
-        this.widht = widht;
+    public void setWidth(String w) {
+        this.subwindow.getStyle().set("width", w);
+        this.widht = w;
     }
     
+    /**
+     * Set the width in pixels
+     * @param w is the width in pixels
+     * @return 
+     */
+    public SubWindow setWidth(int w) {
+        this.subwindow.getStyle().set("width", w+"px");
+        this.widht = w+"px";
+        return this;
+    }
     
     @ClientCallable
     private void updatePosition(int top, int left){ 
@@ -411,7 +460,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     }
     
     /**
-     * Set the resize size. 
+     * Set the bottom right resize size. 
      * @param size 
      */
     public void setResizeSize(int size) {

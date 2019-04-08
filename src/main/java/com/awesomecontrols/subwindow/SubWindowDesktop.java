@@ -138,7 +138,7 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
      * Spanish:
      * Elimina la ventana del desktop.
      * 
-     * @param subw 
+     * @param subw a subwindow
      */
     public void remove(SubWindow subw) {
         this.desktop.remove(subw);
@@ -156,7 +156,7 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     /**
      * Return de defaultWindowState to set for the new added subwindows.
      * It is null, do nothing. Otherwise it set the state to the added subwindow
-     * @return 
+     * @return windowState
      */
     public SubWindowState getDefaultWindowState() {
         return defaultWindowState;
@@ -169,6 +169,14 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
      */
     public void setDefaultWindowState(SubWindowState defaultWindowState) {
         this.defaultWindowState = defaultWindowState;
+    }
+    
+    /**
+     * Return the count of subwindows in the desktop
+     * @return int 
+     */
+    public int getWindowsCount() {
+        return this.windows.size();
     }
     
 }

@@ -3,24 +3,35 @@
         <style>
             .wdlabel-caption {
                 position:relative; 
-                width: 100px;
+                width: var(--subwindow-desktop-bar-label-width,150px);
                 height: 27px;
                 overflow: hidden;
                 display: inline-block;
-                background: #00000000;
-                border-top: 3px solid #666666;
+                /*background: #00000000;*/
+                border-top: var(--subwindow-desktop-bar-label-top-width,3px)
+                            var(--subwindow-desktop-bar-label-top-style,solid)
+                            var(--subwindow-desktop-bar-label-top-color,#666666);
                 /*border-top-color: blue;*/
             }
             
             .wdlabel-caption:hover {
-                border-top: 3px solid #000000FF;
-                border-top-color: #0066ff;
-                background: #00000055;
+                /*border-top: 3px solid #000000FF;*/
+                border-top: var(--subwindow-desktop-bar-label-top-hover-width,3px)
+                            var(--subwindow-desktop-bar-label-top-hover-style,solid)
+                            var(--subwindow-desktop-bar-label-top-hover-color,#0066ff);
+                
+                /*border-top-color: #0066ff;*/
+                /*background: #00000055;*/
             }
             
             .wdlabel-caption-focus{
-                border-top: 3px solid #000000FF;
-                border-top-color: #0066ff;
+                /*border-top: 3px solid #000000FF;*/
+                /*border-top-color: #0066ff;*/
+                
+                border-top: var(--subwindow-desktop-bar-label-top-focus-width,3px)
+                            var(--subwindow-desktop-bar-label-top-focus-style,solid)
+                            var(--subwindow-desktop-bar-label-top-focus-color,#0066ff);
+                
                 /*border-top-color: blue;*/
             }
 

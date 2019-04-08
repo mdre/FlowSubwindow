@@ -193,7 +193,7 @@ ext.copyFile = {String srcF, String destF ->
 }
 
 task createVaadinDirectoryRelease(type: Zip) {
-    doLast {
+    if (project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("createvaadindirectoryrelease")) {
         group = 'Welcome'
         description = 'Crear un paquete para subir a Vaadin Directory'
 
@@ -237,7 +237,7 @@ task createVaadinDirectoryRelease(type: Zip) {
         // parámetros específicos del task Zip
         archiveName = project.name+"-"+version+".zip"
         destinationDir = file(VAADINDIRECTORY)
-
+        
         from vaadinDistDir
         println "finalizado."
     }
