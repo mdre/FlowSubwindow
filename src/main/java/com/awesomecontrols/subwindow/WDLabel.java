@@ -11,10 +11,14 @@ import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.HasTheme;
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.templatemodel.TemplateModel;
@@ -53,6 +57,14 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
     private void init() {
         this.caption.removeAll();
         this.caption.add(new Label(label));
+        
+        Button closeButton = new Button(new Icon(VaadinIcon.CLOSE), evt -> {
+            sw.close();
+        });
+        closeButton.addThemeVariants(ButtonVariant.LUMO_SMALL);
+        closeButton.setClassName("wdlabel-close-button");
+        
+        this.caption.add(closeButton);
     }
 
     public SubWindow getSw() {
