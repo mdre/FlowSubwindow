@@ -91,6 +91,8 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     @Id("closeButton")
     private Image closeButton;
     
+    private boolean closeButtonVisible = true;
+    
     //-----------------------------------------------------
     
     
@@ -369,12 +371,14 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             this.height = this.subwindow.getStyle().get("height");
         }
         
+        String newHeight = "calc(100% - 30px)";
+        
         //this.updateSize();
         this.state = SubWindowState.MAXIMIZED;
         this.subwindow.getStyle().set("left", ""+0+"px");
         this.subwindow.getStyle().set("top", ""+0+"px");
         this.subwindow.getStyle().set("width", "100%");
-        this.subwindow.getStyle().set("height", "100%");
+        this.subwindow.getStyle().set("height", newHeight);
         this.maximizeButton.getStyle().set("display", "none");
 //        this.maximizeButton.setVisible(false);
 //        this.restoreButton.setVisible(true);
@@ -385,7 +389,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.maximize();
         }
     }
-    
+
     @Override
     @ClientCallable
     public void restore() {
@@ -406,7 +410,6 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.restore();
         }
     }
-    
     
     void focusLost() {
         LOGGER.log(Level.INFO, "focuslost: "+this.grayOnFocusLost+" - "+this.inFront);
@@ -449,6 +452,20 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     public void setCloseButtonVisible(boolean visible) {
         this.closeButton.getStyle().set("display", visible?"inline-block":"none");
+        
+        // Oculto/muestro el closeButton de la barra inferior
+        if (this.subwindowDesktop == null) {
+            LOGGER.log(Level.WARNING, "Subwindow no added to desktop yet");
+            return;
+        }
+        this.subwindowDesktop.setCloseButtonVisible(this, visible);
+        this.closeButtonVisible = visible;
+    }
+    
+    public boolean isCloseButtonVisible() {
+        return closeButtonVisible;
+        /*String display = this.closeButton.getStyle().get("display");
+        return (display != null && !display.equals("none"));*/
     }
     
     public void setMaximizeButtonVisible(boolean visible) {

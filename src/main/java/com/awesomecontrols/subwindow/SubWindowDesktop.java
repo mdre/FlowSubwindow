@@ -131,6 +131,16 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
             }
         }
     }
+    
+    public void setCloseButtonVisible(SubWindow sw, boolean visible) {
+        LOGGER.log(Level.INFO, "setCloseButtonVisible: "+sw.getTitle());
+        for (WDLabel wdl : this.windows) {
+            SubWindow window = wdl.getSw();
+            if (window == sw) {
+                wdl.getCloseButton().getElement().getStyle().set("display", visible?"inline-block":"none");
+            }
+        }
+    }
 
     /**
      * Remove the subwindow from the desktop.

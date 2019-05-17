@@ -16,6 +16,7 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -46,6 +47,8 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
     
     @Id("caption")
     private Div caption;
+
+    private Image closeButton;
     
     public WDLabel(SubWindow sw, SubWindowDesktop swd) {
         this.swd = swd;
@@ -55,16 +58,24 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
     }
     
     private void init() {
+        
+        Label lbl = new Label(label);
+        lbl.setClassName("wdlabel-label");
+        
         this.caption.removeAll();
-        this.caption.add(new Label(label));
+        this.caption.add(lbl);
         
-        Button closeButton = new Button(new Icon(VaadinIcon.CLOSE), evt -> {
+        this.closeButton = new Image("frontend/bower_components/sub-window/icons/baseline-close-24px.svg","");
+        this.closeButton.setClassName("wdlabel-close-button");
+        
+        this.closeButton.getElement().addEventListener("click", e -> {
             sw.close();
-        });
-        closeButton.addThemeVariants(ButtonVariant.LUMO_SMALL);
-        closeButton.setClassName("wdlabel-close-button");
-        
+        });                
         this.caption.add(closeButton);
+
+        // Ocultar/mostrar closeButton
+        boolean visible = this.getSw().isCloseButtonVisible();
+        this.closeButton.getStyle().set("display", visible?"inline-block":"none");
     }
 
     public SubWindow getSw() {
@@ -83,6 +94,10 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
         this.label = label;
     }
     
+    public Image getCloseButton() {
+        return closeButton;
+    }
+
     @ClientCallable
     public void onLabelClick() {
 //        this.swd.bringToFront(this.sw);
