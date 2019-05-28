@@ -92,6 +92,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     private Image closeButton;
     
     private boolean closeButtonVisible = true;
+    private boolean maximized = true;
     
     //-----------------------------------------------------
     
@@ -290,10 +291,16 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     }
     
     @ClientCallable
-    private void updatePosition(int top, int left){ 
+    private void updatePosition(int top, int left){
+        
         LOGGER.log(Level.FINER, ""+top+","+left);
-        this.top = top;
-        this.left = left;
+        if (isMaximized()) {
+            restore();
+        }
+        else {
+            this.top = top;
+            this.left = left;
+        }
     };
     
     
@@ -389,6 +396,14 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.maximize();
         }
     }
+    
+    public void setMaximized(Boolean bool) {
+        maximized = bool;
+    }    
+    
+    public Boolean isMaximized() {
+        return maximized;
+    }    
 
     @Override
     @ClientCallable
