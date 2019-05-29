@@ -323,7 +323,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.show();
         this.subwindowDesktop.bringToFront(this);
         if (this.grayOnFocusLost) {
-            this.subwindow.remove(greyGlass);
+            this.subwindow.getStyle().set("filter", "brightness(100%)");
         }
         this.focus();
         this.setTabIndex(-1);
@@ -430,7 +430,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         LOGGER.log(Level.INFO, "focuslost: "+this.grayOnFocusLost+" - "+this.inFront);
         if (this.grayOnFocusLost && this.inFront) {
             LOGGER.log(Level.INFO, "bundle_key");
-            this.subwindow.add(greyGlass);
+            this.subwindow.getStyle().set("filter", "brightness(90%)");
         }
         this.inFront = false;
     }

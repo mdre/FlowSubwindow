@@ -112,9 +112,12 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     
     public void bringToFront(SubWindow sw) {
         LOGGER.log(Level.INFO, "bringToFront: "+sw.getTitle());
+        WDLabel onTop = null;
+        int zindex = ZLOWER;
         for (WDLabel wdl : this.windows) {
             SubWindow window = wdl.getSw();
             if (window == sw) {
+                
                 LOGGER.log(Level.FINER, "*******************************************");
                 LOGGER.log(Level.FINER, "TOP: "+window.getTitle());
                 LOGGER.log(Level.FINER, "*******************************************");
@@ -122,13 +125,21 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
 //                window.focus();
                 window.setClassStyle("card card-4");
                 wdl.setClassName("wdlabel-caption-focus");
+                onTop = wdl;
             } else {
                 LOGGER.log(Level.FINER, "low: "+window.getTitle());
-                window.setZIndex(ZLOWER);
+                window.setZIndex(zindex++);
                 window.setClassStyle("card card-1");
                 window.focusLost();
                 wdl.setClassName("wdlabel-caption-focus",false);
             }
+        }
+        
+        /* Muevo ventana hacia el final de la lista */
+        if (onTop != null) {
+            int itemPos = this.windows.indexOf(onTop);
+            this.windows.remove(itemPos);
+            this.windows.add(this.windows.size(), onTop);
         }
     }
     
@@ -158,9 +169,12 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
                 this.windowsBar.remove(wdl);
                 iterator.remove();
             }
-            
         }
         
+        /* Traigo al frente la ventana que está por detrás */
+        if (this.windows.size() > 0) {
+            this.windows.get(this.windows.size()-1).getSw().bringToFront();
+        }
     }
     
     /**
