@@ -15,6 +15,8 @@ plugins {
     id 'nu.studer.credentials' version '1.0.0'
     id 'io.codearte.nexus-staging' version '0.11.0'
 }
+description = rootProject.name
+
 apply plugin: 'maven'
 apply plugin: 'signing'
 
