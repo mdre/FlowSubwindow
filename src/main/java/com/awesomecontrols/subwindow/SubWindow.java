@@ -105,7 +105,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     //-----------------------------------------------------
     
     boolean grayOnFocusLost = true;
-    Div greyGlass = new Div();
+    Div grayGlass = new Div();
     
     private boolean inFront = true;
     
@@ -125,8 +125,11 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     }
 
     private void init() {
-        greyGlass.setClassName("subwindow-focuslost");
-        
+        grayGlass.setClassName("subwindow-focuslost");
+        grayGlass.getElement().addEventListener("click", (event) -> {
+            LOGGER.log(Level.FINER, "grayGlass click listener!");
+            this.bringToFront();
+        });
         VerticalLayout vl = new VerticalLayout();
         vl.setSizeFull();
         this.setContent(vl);
@@ -390,6 +393,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
 //        this.maximizeButton.setVisible(false);
 //        this.restoreButton.setVisible(true);
         this.restoreButton.getStyle().set("display", "inline-block");
+        this.maximized = true;
         
         // disparar el evento.
         for (ISubWindowEvents el : this.eventListeners) {
@@ -419,6 +423,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
 //        this.restoreButton.setVisible(false);
 //        this.maximizeButton.setVisible(true);
         this.maximizeButton.getStyle().set("display", "inline-block");
+        this.maximized=false;
         
         // disparar el evento.
         for (ISubWindowEvents el : this.eventListeners) {
