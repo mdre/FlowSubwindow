@@ -45,7 +45,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     }
 
     private SubWindowDesktop subwindowDesktop;
-    
+
     private SubWindowState state = SubWindowState.NORMAL;
     /**
      * número de identificación asignado por el desktop.
@@ -512,4 +512,13 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public void addCustomTitleControl(Component c) {
         this.customControls.add(c);
     }
+
+    public SubWindowState getState() {
+        return state;
+    }
+
+    public void setState(SubWindowState state) {
+        this.state = state;
+    }
+
 }
