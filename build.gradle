@@ -11,9 +11,9 @@ plugins {
     id 'org.gretty' version '2.3.0'
     id 'com.devsoap.vaadin-flow' version '1.1.2'
     
-    id 'net.researchgate.release' version '2.6.0'
+    id 'net.researchgate.release' version '2.8.1'
     id 'nu.studer.credentials' version '1.0.7'
-    id 'io.codearte.nexus-staging' version '0.21.0'
+    id 'io.codearte.nexus-staging' version '0.21.1'
 }
 description = rootProject.name
 
@@ -34,7 +34,7 @@ idea{
 }
 
 vaadin {
-    version '13.+'          // Vaadin version to use
+    version '10.0.0'          // Vaadin version to use
     productionMode false    // Is the component built for production use
 }
 
