@@ -175,22 +175,25 @@ function beginResize(elementToResize, event) {
 }
 
 function onWindowClick(element, event) {
-    event.stopPropagation();
+//    event.stopPropagation();
     // verificar que se haya hecho clic en la ventana.
     // busco el primer elemento cuyo ID != "" y verifico que sea un subwindow.
 
-    // fix para FF y Chrome. event.path no es estandar. 
-    var path = event.path || (event.composedPath && event.composedPath());
+    // fix para FF y Chrome. event.path no es estandar.
+//    var path = event.path || (event.composedPath && event.composedPath());
+//
+//    var i = 0;
+//    while (path[i].id == "") {
+//        i++;
+//    }
+//    if (path[i].id == "subwindow") {
+//        var flowElement = element.parentNode.host;
+//        flowElement.$server.onWindowsClick();
+//    }
 
+    var flowElement = element.parentNode.host;
+    flowElement.$server.onWindowsClick();
 
-    var i = 0;
-    while (path[i].id == "") {
-        i++;
-    }
-    if (path[i].id == "subwindow") {
-        var flowElement = element.parentNode.host;
-        flowElement.$server.onWindowsClick();
-    }
 }
 
 function onCloseClick(element, event) {
