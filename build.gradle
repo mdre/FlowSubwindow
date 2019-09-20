@@ -34,7 +34,7 @@ idea{
 }
 
 vaadin {
-    version '10.0.0'          // Vaadin version to use
+    version '12.0.0'          // Vaadin version to use
     productionMode false    // Is the component built for production use
 }
 
@@ -82,12 +82,15 @@ task autoBuildNumber {
         printWriter.close()
     }
 }
-
+// saltar autoBuildNumber
+// agregar esta tarea para que no se incremente el valor.
+task sabn{}
 
 
 
 // agregar la dependencia solo si no se trata de un release
-if (! project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("release") ) {
+if (! (project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("release")
+       || project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("sabn")) ) {
     build.dependsOn autoBuildNumber
 }
 build.doLast {
