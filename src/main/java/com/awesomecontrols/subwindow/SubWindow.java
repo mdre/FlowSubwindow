@@ -367,7 +367,17 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.minimize();
         }
     }
-    
+
+    @ClientCallable
+    public void toggleMaximizeRestore() {
+        if (isMaximized()) {
+            restore();
+        }
+        else {
+            maximize();
+        }
+    }
+
     @Override
     @ClientCallable
     public void maximize() {

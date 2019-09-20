@@ -10,12 +10,13 @@
 
         <div id="subwindow" 
              class="card card-1 subwindow"
-             draggable="true"
+             draggable="false"
              onClick="onWindowClick(this, event);"
              > 
             <div id="header" 
                  class="subwindow-header"
                  onMouseDown="beginDrag(this.parentNode, event);"
+                 ondblclick="onHeaderDblClick(this.parentNode, event);"
                  >
                 <div id="caption"
                      class="subwindow-header-caption"

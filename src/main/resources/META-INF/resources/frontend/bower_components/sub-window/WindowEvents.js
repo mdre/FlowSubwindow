@@ -211,6 +211,12 @@ function onMaximizeClick(element, event) {
     event.stopPropagation();
 }
 
+function onHeaderDblClick(element, event) {
+    var flowElement = element.parentNode.host;
+    flowElement.$server.toggleMaximizeRestore();
+    event.stopPropagation();
+}
+
 function onRestoreClick(element, event) {
     var flowElement = element.parentNode.host;
     flowElement.$server.restore();
