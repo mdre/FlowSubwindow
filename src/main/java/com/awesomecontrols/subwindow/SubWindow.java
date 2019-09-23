@@ -317,7 +317,9 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     @ClientCallable
     public void onWindowsClick() {
         LOGGER.log(Level.FINER, "Click Event!");
-        this.bringToFront();
+        if (!this.inFront) {
+            this.bringToFront();
+        }
     }
     
     @ClientCallable
