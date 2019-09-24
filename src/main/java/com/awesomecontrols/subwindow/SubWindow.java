@@ -92,7 +92,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     private Image closeButton;
     
     private boolean closeButtonVisible = true;
-    private boolean maximized = true;
+    private boolean maximized = false;
     
     //-----------------------------------------------------
     
@@ -294,7 +294,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     }
     
     @ClientCallable
-    private void updatePosition(int top, int left){
+    public void updatePosition(int top, int left){
         
         LOGGER.log(Level.FINER, ""+top+","+left);
         if (isMaximized()) {
@@ -303,15 +303,25 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         else {
             this.top = top;
             this.left = left;
+
+            // disparar el evento.
+            for (ISubWindowEvents el : this.eventListeners) {
+                el.updatePosition(top, left);
+            }
         }
-    };
-    
-    
+    }
+
     @ClientCallable
-    private void updateSize(String w, String h){ 
+    public void updateSize(String w, String h){
         this.widht = w;
         this.height = h;
         LOGGER.log(Level.FINER, "update size: w: "+this.widht+" h: "+this.height);
+
+        // disparar el evento.
+        for (ISubWindowEvents el : this.eventListeners) {
+            el.updateSize(w, h);
+        }
+
     };
     
     @ClientCallable
@@ -442,7 +452,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.restore();
         }
     }
-    
+
     void focusLost() {
         LOGGER.log(Level.INFO, "focuslost: "+this.grayOnFocusLost+" - "+this.inFront);
         if (this.grayOnFocusLost && this.inFront) {

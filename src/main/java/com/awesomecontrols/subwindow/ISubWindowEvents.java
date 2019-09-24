@@ -14,4 +14,6 @@ public interface ISubWindowEvents {
     void minimize();
     void maximize();
     void restore();
+    void updatePosition(int x, int y);
+    void updateSize(String w, String h);
 }
