@@ -32,9 +32,17 @@
                 cursor: move;
 
             }
+            .subwindow-header-icon {
+                padding-left: 2px;
+            }
+
+            .subwindow-header-icon iron-icon{
+                max-height: 16px;
+            }
+
             .subwindow-header-caption {
                 width: 100%;
-                padding-left: 8px;
+                padding-left: 2px;
                 display: -webkit-box;
                 display: -moz-box;
                 display: -ms-flexbox;
@@ -49,6 +57,11 @@
 
                 color: var(--subwindow-header-color);
             }
+
+            .subwindow-header-caption label {
+                font-size: var(--lumo-font-size-m, 0.875rem);
+            }
+
             .subwindow-custom-controls {
                 height: 18px;
                 align-content: center;

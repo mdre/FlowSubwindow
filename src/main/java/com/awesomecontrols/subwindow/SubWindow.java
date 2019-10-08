@@ -19,6 +19,8 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
@@ -61,8 +63,8 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     int zindex;
     
     String title;
-    
-    
+    VaadinIcon icon;
+
     // referencias al modelo html
     @Id("subwindow")
     private Div subwindow;
@@ -70,10 +72,13 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     //-----------------------------------------------------
     @Id("header")
     private Div header;
-    
+
     @Id("caption")
     private Div caption;
-    
+
+    @Id("icon")
+    private Div iconContainer;
+
     @Id("custom-controls")
     private Div customControls;
     
@@ -108,7 +113,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     Div grayGlass = new Div();
     
     private boolean inFront = true;
-    
+
     public SubWindow() {
         setId("subwindow");
         this.title = "subwindow";
@@ -116,11 +121,19 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.caption.add(new Label(this.title));
         init();
     }
-    
+
     public SubWindow(String title) {
         setId("subwindow");
         this.setTitle(title);
-        
+
+        init();
+    }
+
+    public SubWindow(String title, VaadinIcon icon) {
+        setId("subwindow");
+        this.setTitle(title);
+        this.setIcon(icon);
+
         init();
     }
 
@@ -168,11 +181,11 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.content.removeAll();
         this.content.add(content);
     }
-    
-    
+
+
     /**
      * Set the subwindow title.
-     * @return 
+     * @return
      */
     public SubWindow setTitle(String title) {
         this.title = title;
@@ -180,15 +193,34 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.caption.add(new Label(this.title));
         return this;
     }
-    
+
+    /**
+     * Set the subwindow icon.
+     * @return
+     */
+    public SubWindow setIcon(VaadinIcon icon) {
+        this.icon = icon;
+        this.iconContainer.removeAll();
+        this.iconContainer.add(icon.create());
+        return this;
+    }
+
     /**
      * Return the subwindow title
-     * @return 
+     * @return
      */
     public String getTitle() {
         return this.title;
     }
-    
+
+    /**
+     * Return the subwindow icon
+     * @return
+     */
+    public VaadinIcon getIcon() {
+        return this.icon;
+    }
+
     /**
      * Set the subwindow top position in pixels
      * @param top in pixels

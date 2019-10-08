@@ -11,8 +11,6 @@ import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.HasTheme;
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
@@ -40,31 +38,39 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
             LOGGER.setLevel(Level.INFO);
         }
     }
-    
+
     SubWindow sw;
     String label;
+    VaadinIcon icon;
     SubWindowDesktop swd;
     
     @Id("caption")
     private Div caption;
 
     private Image closeButton;
-    
+
     public WDLabel(SubWindow sw, SubWindowDesktop swd) {
         this.swd = swd;
         this.sw = sw;
         this.label = sw.getTitle();
+        this.icon = sw.getIcon();
         this.init();
     }
-    
+
     private void init() {
         
-        Label lbl = new Label(label);
-        lbl.setClassName("wdlabel-label");
-        
         this.caption.removeAll();
+
+        if (this.icon != null) {
+            Icon i = this.icon.create();
+            i.setClassName("wdlabel-icon");
+            this.caption.add(i);
+        }
+
+        Label lbl = new Label(this.label);
+        lbl.setClassName("wdlabel-label");
         this.caption.add(lbl);
-        
+
         this.closeButton = new Image("frontend/bower_components/sub-window/icons/baseline-close-24px.svg","");
         this.closeButton.setClassName("wdlabel-close-button");
         
