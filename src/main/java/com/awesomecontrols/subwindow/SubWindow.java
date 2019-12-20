@@ -19,7 +19,6 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
@@ -58,11 +57,12 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     int top;
     int left;
-    String widht;
+    String width;
     String height;
     int zindex;
-    
+
     String title;
+    String subtitle;
     VaadinIcon icon;
 
     // referencias al modelo html
@@ -122,16 +122,16 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         init();
     }
 
-    public SubWindow(String title) {
+    public SubWindow(String title, String subtitle) {
         setId("subwindow");
-        this.setTitle(title);
+        this.setTitle(title, subtitle);
 
         init();
     }
 
-    public SubWindow(String title, VaadinIcon icon) {
+    public SubWindow(String title, String subtitle, VaadinIcon icon) {
         setId("subwindow");
-        this.setTitle(title);
+        this.setTitle(title, subtitle);
         this.setIcon(icon);
 
         init();
@@ -187,10 +187,26 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
      * Set the subwindow title.
      * @return
      */
-    public SubWindow setTitle(String title) {
+    public SubWindow setTitle(String title, String subtitle) {
         this.title = title;
+        this.subtitle = subtitle;
         this.caption.removeAll();
-        this.caption.add(new Label(this.title));
+        this.caption.add(new Label(
+                this.title +
+                        (this.subtitle != null && !this.subtitle.equals("") ? " | " + this.subtitle : "")));
+        return this;
+    }
+
+    /**
+     * Set the subwindow subtitle.
+     * @return
+     */
+    public SubWindow setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+        this.caption.removeAll();
+        this.caption.add(new Label(
+                this.title +
+                        (this.subtitle != null && !this.subtitle.equals("") ? " | " + this.subtitle : "")));
         return this;
     }
 
@@ -311,7 +327,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     @Override
     public void setWidth(String w) {
         this.subwindow.getStyle().set("width", w);
-        this.widht = w;
+        this.width = w;
     }
     
     /**
@@ -321,7 +337,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
      */
     public SubWindow setWidth(int w) {
         this.subwindow.getStyle().set("width", w+"px");
-        this.widht = w+"px";
+        this.width = w+"px";
         return this;
     }
     
@@ -345,9 +361,9 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
 
     @ClientCallable
     public void updateSize(String w, String h){
-        this.widht = w;
+        this.width = w;
         this.height = h;
-        LOGGER.log(Level.FINER, "update size: w: "+this.widht+" h: "+this.height);
+        LOGGER.log(Level.FINER, "update size: w: "+this.width +" h: "+this.height);
 
         // disparar el evento.
         for (ISubWindowEvents el : this.eventListeners) {
@@ -427,11 +443,11 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public void maximize() {
         
         // preserve the size;
-        if (this.widht==null || this.widht.isEmpty()) {
-            this.widht = this.subwindow.getStyle().get("width");
+        if (this.width ==null || this.width.isEmpty()) {
+            this.width = this.subwindow.getStyle().get("width");
         }
         
-        if (this.widht == null || this.height.isEmpty()) {
+        if (this.width == null || this.height.isEmpty()) {
             this.height = this.subwindow.getStyle().get("height");
         }
         
@@ -468,10 +484,10 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public void restore() {
         this.state = SubWindowState.NORMAL;
         LOGGER.log(Level.INFO, "Restore");
-        LOGGER.log(Level.INFO, "L:"+this.left+", T:"+this.top+" - w:"+this.widht+", h:"+this.height);
+        LOGGER.log(Level.INFO, "L:"+this.left+", T:"+this.top+" - w:"+this.width +", h:"+this.height);
         this.subwindow.getStyle().set("left", ""+this.left+"px");
         this.subwindow.getStyle().set("top", ""+this.top+"px");
-        this.subwindow.getStyle().set("width", ""+this.widht);
+        this.subwindow.getStyle().set("width", ""+this.width);
         this.subwindow.getStyle().set("height", ""+this.height);
         this.restoreButton.getStyle().set("display", "none");
 //        this.restoreButton.setVisible(false);

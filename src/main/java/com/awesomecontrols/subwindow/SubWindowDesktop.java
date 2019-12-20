@@ -47,6 +47,8 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
      */
     private SubWindowState defaultWindowState = null;
 
+    private SubWindow activeSW;
+
     
     public SubWindowDesktop() {
         // getElement().getStyle().set("background-color","#fffdb2");
@@ -126,6 +128,7 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
                 window.setClassStyle("card card-4");
                 wdl.setClassName("wdlabel-caption-focus");
                 onTop = wdl;
+                activeSW = sw;
             } else {
                 LOGGER.log(Level.FINER, "low: "+window.getTitle());
                 window.setZIndex(zindex++);
@@ -202,5 +205,12 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     public int getWindowsCount() {
         return this.windows.size();
     }
-    
+
+    /**
+     * Retorna la subwindow que está activa en este momento
+     * @return
+     */
+    public SubWindow getActiveSW() {
+        return activeSW;
+    }
 }
