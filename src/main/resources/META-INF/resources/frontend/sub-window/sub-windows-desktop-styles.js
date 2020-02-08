@@ -1,4 +1,7 @@
-<dom-module id="sub-windows-desktop-styles">
+import { html } from '@polymer/polymer/polymer-element.js';
+const subwindowDesktopStyleElement = document.createElement('dom-module');
+
+subwindowDesktopStyleElement.innerHTML = `
     <template>
         <style>
             .subwindow-desktop {
@@ -20,4 +23,6 @@
             }
         </style>
     </template>
-</dom-module>
+    `;
+
+subwindowDesktopStyleElement.register('sub-windows-desktop-styles');

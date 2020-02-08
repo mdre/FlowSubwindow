@@ -1,13 +1,13 @@
-<dom-module id="wd-label-styles">
+import { html } from '@polymer/polymer/polymer-element.js';
+const wdLabelStyleElement = document.createElement('dom-module');
+
+wdLabelStyleElement.innerHTML = `
     <template>
         <style>
-
             .wdlabel-caption {
                 position:relative; 
-                width: var(--subwindow-desktop-bar-label-width,200px);
+                width: var(--subwindow-desktop-bar-label-width,150px);
                 height: 27px;
-                padding-left: 2px;
-
                 overflow: hidden;
                 display: inline-block;
                 /*background: #00000000;*/
@@ -15,7 +15,6 @@
                             var(--subwindow-desktop-bar-label-top-style,solid)
                             var(--subwindow-desktop-bar-label-top-color,#666666);
                 /*border-top-color: blue;*/
-                font-size: var(--lumo-font-size-m, 0.875rem);
             }
             
             .wdlabel-caption:hover {
@@ -56,17 +55,10 @@
                 overflow: hidden;
                 white-space: nowrap;
                 display: inline-block;
-                width: 75%;
-                font-size: var(--lumo-font-size-m, 0.875rem);
-                margin: 2px;
+                width: 85%;
             }
-
-            .wdlabel-icon {
-                max-height: 16px;
-                margin-top: 5px;
-                vertical-align: top;
-            }
-
         </style>
     </template>
-</dom-module>
+    `;
+
+wdLabelStyleElement.register('wd-label-styles');

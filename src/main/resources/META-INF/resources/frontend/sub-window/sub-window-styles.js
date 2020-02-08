@@ -1,4 +1,7 @@
-<dom-module id="sub-window-styles">
+import { html } from '@polymer/polymer/polymer-element.js';
+const subwindowStyleElement = document.createElement('dom-module');
+
+subwindowStyleElement.innerHTML = `
     <template>
         <style>
             .subwindow {
@@ -32,17 +35,9 @@
                 cursor: move;
 
             }
-            .subwindow-header-icon {
-                padding-left: 2px;
-            }
-
-            .subwindow-header-icon iron-icon{
-                max-height: 16px;
-            }
-
             .subwindow-header-caption {
                 width: 100%;
-                padding-left: 2px;
+                padding-left: 8px;
                 display: -webkit-box;
                 display: -moz-box;
                 display: -ms-flexbox;
@@ -57,11 +52,6 @@
 
                 color: var(--subwindow-header-color);
             }
-
-            .subwindow-header-caption label {
-                font-size: var(--lumo-font-size-m, 0.875rem);
-            }
-
             .subwindow-custom-controls {
                 height: 18px;
                 align-content: center;
@@ -91,7 +81,6 @@
                 height: 15px;
                 text-align: center;
                 display: inline-block;
-                cursor: pointer;
             }
 
             .subwindow-content {
@@ -107,7 +96,7 @@
                 right: 0px; 
                 width: 5px;
                 height: 5px; 
-/*                border-style: solid;
+                /* border-style: solid;
                 border-width: 5px 5px 0 0;*/
                 background: var(--subwindow-resize-color,#666666);
                 
@@ -127,4 +116,6 @@
             }
         </style>
     </template>
-</dom-module>
+    `;
+
+subwindowStyleElement.register('sub-window-styles');

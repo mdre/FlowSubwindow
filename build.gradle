@@ -1,28 +1,24 @@
-// https://devsoap.com/using-webcomponents-in-vaadin-with-gradle/
-// para crear el componente:
-// gradle vaadinCreateComponent --name SubWindowDesktop --package com.awesomecontrols.subwindow --tag div
-//
 // los recursos se deben agregar en /src/main/resources/META-INF/resources/frontend/...
 // https://vaadin.com/blog/vaadin-10-and-static-resources
 
-
 plugins {
     id 'java'
-    id 'org.gretty' version '2.3.0'
-    id 'com.devsoap.vaadin-flow' version '1.1.2'
-    
+    id 'org.gretty' version '2.3.1'
     id 'net.researchgate.release' version '2.8.1'
     id 'nu.studer.credentials' version '1.0.7'
     id 'io.codearte.nexus-staging' version '0.21.1'
+    id "com.github.dkorotych.gradle-maven-exec" version "2.2.1"
 }
-description = rootProject.name
-
+ 
 apply plugin: 'maven'
 apply plugin: 'signing'
-
+ 
 def sonatypeUser = credentials.sonatypeUser
 def sonatypePassword = credentials.sonatypePassword
 
+def vaadinVersion = "14.1.3"
+
+description = rootProject.name
 
 // ejecutar: gradle idea 
 // para que inicialize el proyecto y baje los javadocs.
@@ -33,15 +29,9 @@ idea{
     }
 }
 
-vaadin {
-    version '12.0.0'          // Vaadin version to use
-    productionMode false    // Is the component built for production use
-}
-
 // desactivo la generación de javadoc en los proyectos que tengan la tarea
 javadoc.enabled = true
 
-//vaadin.version=11
 println "***************************************************************"
 println "SISTEMA: " + name
 println "VERSION: " + version
@@ -63,10 +53,10 @@ task autoBuildNumber {
         def lines = propertiesFile.readLines()
 
         PrintWriter printWriter = new PrintWriter(propertiesFile)
-        
+        String versionNumber = ""
         lines.each {String line ->
             if (line.startsWith("version") ){
-                String versionNumber = line.tokenize("=")[1]
+                versionNumber = line.tokenize("=")[1]
                 String[] versionParts = versionNumber.tokenize(".")
                 // recalcular el build 
                 versionNumber = versionParts[0]+\
@@ -80,57 +70,115 @@ task autoBuildNumber {
             printWriter.println(line)
         }
         printWriter.close()
+
+        // actualizar el POM
+        File pomFile = new File('pom.xml')
+        lines = pomFile.readLines()
+
+        printWriter = new PrintWriter(pomFile)
+        
+        def onlyFirst = true
+        lines.each {String line ->
+            // cambiar solo el primer <version>. 
+            // TODO: mejorar esto con un parser de xml
+            if (line.trim().startsWith("<version>") && onlyFirst ){
+                onlyFirst = false
+                line = "    <version>"+versionNumber+"-SNAPSHOOT</version>"
+                //                println line
+            }
+            if (line.trim().startsWith("<vaadin.version>")){
+                line = "    <vaadin.version>"+vaadinVersion+"</vaadin.version>"
+                //                println line
+            }
+            printWriter.println(line)
+        }
+        printWriter.close()
     }
 }
 // saltar autoBuildNumber
 // agregar esta tarea para que no se incremente el valor.
 task sabn{}
 
+task createMavenPom {
+    mkdir("target/classes/META-INF/maven/$project.group/$project.archivesBaseName")
 
+    pom {}.writeTo("target/classes/META-INF/maven/$project.group/$project.archivesBaseName/pom.xml")
+
+    file("target/classes/META-INF/maven/$project.group/$project.archivesBaseName/pom.properties").text = """\
+        version=$project.version
+        groupId=$project.group
+        artifactId=$project.archivesBaseName
+        """.stripIndent()
+} 
+
+// invocar el prepare-frontend de maven
+task prepareFrontEnd (type: MavenExec, dependsOn: build) {
+    goals 'vaadin:prepare-frontend'
+}
+
+task buildFrontEnd (type: MavenExec, dependsOn: prepareFrontEnd) {
+    goals 'vaadin:build-frontend'
+}
 
 // agregar la dependencia solo si no se trata de un release
 if (! (project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("release")
-       || project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("sabn")) ) {
-    build.dependsOn autoBuildNumber
+       || project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("sabn")) 
+   ) {
+    build.dependsOn autoBuildNumber 
 }
+
 build.doLast {
+    // copiar las clases compiladas
+    copy {
+        from "build/classes/java/main/."
+        into "target/classes"
+    }
+}
+
+task vaadinBuild (dependsOn: prepareFrontEnd){
     println "***************************************************************"
-    println "SISTEMA: " + name
+    println "Building Vaadin project: " + name
     println "VERSION: " + version
     println "***************************************************************"
+    
+}
+
+task vaadinClean (dependsOn: clean){
+    doLast {
+        //project.delete("assembly")
+        project.delete("bin")
+        project.delete("build")
+        project.delete("node_modules")
+        project.delete("target")
+        project.delete("package.json")
+        project.delete("webpack.config.js")
+        project.delete("webpack.generated.js")
+    }
 }
 
 repositories {
     mavenLocal()
-    vaadin.repositories()
     mavenCentral()
+    jcenter()
+    // vaadin.repositories()
+    maven {
+        url "https://mvnrepository.com/artifact/com.vaadin/vaadin"
+    }
+
 }
 
-//println vaadin.bom()
-//println vaadin.core()
-//println vaadin.slf4j()
 dependencies {
-    compile vaadin.bom()
-    compile vaadin.core()
-    runtime vaadin.slf4j()
+    compile("com.vaadin:vaadin:$vaadinVersion")
+    //compile('com.vaadin:vaadin-bom:14.0.14')
+    // compile vaadin.bom()
+    // compile vaadin.core()
+    // runtime vaadin.slf4j()
     // compile ('org.slf4j:slf4j-simple:1.7.25:javadoc')
     //   <configuration> vaadin.core()             // Vaadin core dependencies
     //   <configuration> vaadin.platform()         // Vaadin platform dependencies
     //   <configuration> vaadin.bom()              // Vaadin Bill-of-Materials dependency
     //   <configuration> vaadin.dependency(..)     // Adds a single vaadin-* dependency
 }
-
-vaadinClientDependencies {
-    // bower 'PolymerElements/paper-slider'
-}
-
-//sourceSets {
-//    main {
-//        resources {
-//            srcDirs "src/main/webapp"
-//        }
-//    }
-//}
 
 
 test {
@@ -165,20 +213,16 @@ jar {
       
         )
     }
+    from "$buildDir/classes/java/main"
+    
+    from ("target/classes/META-INF") {
+        into "META-INF"
+    }
 }
 
 
 //create a single Jar with all dependencies
 task fatJar(type: Jar) {
-    //    manifest {
-    //        attributes(
-    //      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-    //      'Premain-Class':'net.odbogm.agent.TransparentDirtyDetectorAgent',
-    //      'Agent-Class':'net.odbogm.agent.TransparentDirtyDetectorAgent',
-    //      'Can-Redefine-Classes':true,
-    //      'Can-Retransform-Classes':true
-    //        )
-    //    }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
@@ -201,12 +245,20 @@ task createVaadinDirectoryRelease(type: Zip) {
     if (project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("createvaadindirectoryrelease")) {
         group = 'Welcome'
         description = 'Crear un paquete para subir a Vaadin Directory'
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+        print "Ingrese la versión a utilizar (Version actual: ${version}): "
 
+        def targetVersion = br.readLine()
+
+        if (!targetVersion) {
+            targetVersion = version
+        }
         println "preparando el paquete..."
-
+            
         String VAADINDIRECTORY = "toVaadinDirectory"
         String vaadinDistDir = VAADINDIRECTORY+"/dist"
-
+        
         File toVaadinDirectory = new File(VAADINDIRECTORY)
         File fVaadinDistDir = new File(vaadinDistDir)
         File vdMetaInf = new File(vaadinDistDir+"/META-INF")
@@ -218,35 +270,46 @@ task createVaadinDirectoryRelease(type: Zip) {
         toVaadinDirectory.mkdir()
         fVaadinDistDir.mkdir()
         vdMetaInf.mkdir()
-
+        
         // crear el manifest
         println "creando el manifest..."
         File vdManifest = new File(vaadinDistDir+"/META-INF/MANIFEST.MF")
         vdManifest.write("Manifest-Version: 1.0\n")
         vdManifest << "Vaadin-Package-Version: 1\n"
-        vdManifest << "Vaadin-Addon: flowsubwindow-"+version+".jar\n"
+        vdManifest << "Vaadin-Addon: flowsubwindow-"+targetVersion+".jar\n"
         vdManifest << "Implementation-Vendor: MarceloDRe \n"
         vdManifest << "Implementation-Title: SubWindowDesktop and Subwindow component\n"
-        vdManifest << "Implementation-Version: "+version+"\n"
-
+        vdManifest << "Implementation-Version: "+targetVersion+"\n"
+        
         // copiar los archivos al directorio
         // requiere jar, sourceJar y javadoc y le readme.md
         println "copiando los archivos..."
-        copyFile("build/libs/"+project.name+"-"+version+".jar", vaadinDistDir+"/"+project.name+"-"+version+".jar")
-        copyFile("build/libs/"+project.name+"-"+version+"-sources.jar", vaadinDistDir+"/"+project.name+"-"+version+"-sources.jar")
-        copyFile("build/libs/"+project.name+"-"+version+"-javadoc.jar", vaadinDistDir+"/"+project.name+"-"+version+"-javadoc.jar")
+        copyFile("build/libs/${project.name}-${targetVersion}.jar", "${vaadinDistDir}/${project.name}-${targetVersion}.jar")
+        copyFile("build/libs/${project.name}-${targetVersion}-sources.jar", "${vaadinDistDir}/${project.name}-${targetVersion}-sources.jar")
+        copyFile("build/libs//${project.name}-${targetVersion}-javadoc.jar", "${vaadinDistDir}/${project.name}-${targetVersion}-javadoc.jar")
         copyFile("./README.md", vaadinDistDir+"/README.md")
-
+        
         println "comprimiendo..."
         // crear el zip para subir
         // parámetros específicos del task Zip
-        archiveName = project.name+"-"+version+".zip"
+        archiveName = project.name+"-"+targetVersion+".zip"
         destinationDir = file(VAADINDIRECTORY)
-        
+
         from vaadinDistDir
         println "finalizado."
     }
 }
+
+
+// correr en jetty. Ejecutar: 
+// gradle appStart
+gretty {
+    httpPort = 8081
+    contextPath = '/subwindow'
+    servletContainer = 'jetty9.4'
+    // ... many more properties
+}
+
 
 
 // de acuerdo a la guía de 
@@ -276,9 +339,6 @@ signing {
     
     sign(configurations.archives)
 }
-
-
-
 
 
 nexusStaging {

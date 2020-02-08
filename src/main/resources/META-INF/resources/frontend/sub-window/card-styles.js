@@ -1,9 +1,11 @@
-<dom-module id="card-styles">
+import { html } from '@polymer/polymer/polymer-element.js';
+const cardStyleElement = document.createElement('dom-module');
+cardStyleElement.innerHTML = `
     <template>
         <style>
             .card {
-                background: var(--subwindow-bg,#fff);
-                border-radius: var(--subwindow-border-radius,2px);
+                background: #fff;
+                border-radius: 2px;
                 display: inline-block;
                 /*margin: 1rem;*/
                 position: relative;
@@ -35,4 +37,5 @@
             }
         </style>
     </template>
-</dom-module>
+    `;
+cardStyleElement.register('card-styles');

@@ -6,31 +6,29 @@
 
 package com.awesomecontrols.subwindow;
 
-import com.vaadin.flow.component.ClientCallable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.HasTheme;
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.polymertemplate.EventHandler;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.templatemodel.TemplateModel;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Marcelo D. Ré {@literal <marcelo.re@gmail.com>}
  */
 @Tag("wd-label")
-@StyleSheet("frontend://bower_components/sub-window/cards.css")
-@HtmlImport("bower_components/sub-window/wd-label.html")
+// @StyleSheet("frontend://bower_components/sub-window/cards.css")
+@JsModule("./sub-window/wd-label.js")
 class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasTheme, HasStyle  {
     private final static Logger LOGGER = Logger.getLogger(WDLabel.class .getName());
     static {
@@ -38,40 +36,32 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
             LOGGER.setLevel(Level.INFO);
         }
     }
-
+    
     SubWindow sw;
     String label;
-    VaadinIcon icon;
     SubWindowDesktop swd;
     
     @Id("caption")
     private Div caption;
 
     private Image closeButton;
-
+    
     public WDLabel(SubWindow sw, SubWindowDesktop swd) {
         this.swd = swd;
         this.sw = sw;
         this.label = sw.getTitle();
-        this.icon = sw.getIcon();
         this.init();
     }
-
+    
     private void init() {
         
-        this.caption.removeAll();
-
-        if (this.icon != null) {
-            Icon i = this.icon.create();
-            i.setClassName("wdlabel-icon");
-            this.caption.add(i);
-        }
-
-        Label lbl = new Label(this.label);
+        Label lbl = new Label(label);
         lbl.setClassName("wdlabel-label");
+        
+        this.caption.removeAll();
         this.caption.add(lbl);
-
-        this.closeButton = new Image("frontend/bower_components/sub-window/icons/baseline-close-24px.svg","");
+        
+        this.closeButton = new Image("./frontend/sub-window/icons/baseline-close-24px.svg","");
         this.closeButton.setClassName("wdlabel-close-button");
         
         this.closeButton.getElement().addEventListener("click", e -> {
@@ -104,7 +94,7 @@ class WDLabel extends PolymerTemplate<TemplateModel> implements HasSize, HasThem
         return closeButton;
     }
 
-    @ClientCallable
+    @EventHandler
     public void onLabelClick() {
 //        this.swd.bringToFront(this.sw);
         this.sw.bringToFront();
