@@ -3,12 +3,11 @@
 
 plugins {
     id 'java'
-    id 'org.gretty' version '3.0.1'
+    id 'org.gretty' version '2.3.1'
     id 'net.researchgate.release' version '2.8.1'
     id 'nu.studer.credentials' version '1.0.7'
     id 'io.codearte.nexus-staging' version '0.21.1'
-    //id "com.github.dkorotych.gradle-maven-exec" version "2.2.1"
-     //id "com.vaadin" version "0.6.0"
+    id "com.github.dkorotych.gradle-maven-exec" version "2.2.1"
 }
  
 apply plugin: 'maven'
@@ -72,6 +71,28 @@ task autoBuildNumber {
         }
         printWriter.close()
 
+        // actualizar el POM
+        File pomFile = new File('pom.xml')
+        lines = pomFile.readLines()
+
+        printWriter = new PrintWriter(pomFile)
+        
+        def onlyFirst = true
+        lines.each {String line ->
+            // cambiar solo el primer <version>. 
+            // TODO: mejorar esto con un parser de xml
+            if (line.trim().startsWith("<version>") && onlyFirst ){
+                onlyFirst = false
+                line = "    <version>"+versionNumber+"-SNAPSHOOT</version>"
+                //                println line
+            }
+            if (line.trim().startsWith("<vaadin.version>")){
+                line = "    <vaadin.version>"+vaadinVersion+"</vaadin.version>"
+                //                println line
+            }
+            printWriter.println(line)
+        }
+        printWriter.close()
     }
 }
 // saltar autoBuildNumber
@@ -79,16 +100,25 @@ task autoBuildNumber {
 task sabn{}
 
 task createMavenPom {
-    mkdir("build/resources/main/META-INF/maven/$project.group/$project.archivesBaseName")
+    mkdir("target/classes/META-INF/maven/$project.group/$project.archivesBaseName")
 
-    pom {}.writeTo("build/resources/main/META-INF/maven/$project.group/$project.archivesBaseName/pom.xml")
+    pom {}.writeTo("target/classes/META-INF/maven/$project.group/$project.archivesBaseName/pom.xml")
 
-    file("build/resources/main/META-INF/maven/$project.group/$project.archivesBaseName/pom.properties").text = """\
+    file("target/classes/META-INF/maven/$project.group/$project.archivesBaseName/pom.properties").text = """\
         version=$project.version
         groupId=$project.group
         artifactId=$project.archivesBaseName
         """.stripIndent()
 } 
+
+// invocar el prepare-frontend de maven
+task prepareFrontEnd (type: MavenExec, dependsOn: build) {
+    goals 'vaadin:prepare-frontend'
+}
+
+task buildFrontEnd (type: MavenExec, dependsOn: prepareFrontEnd) {
+    goals 'vaadin:build-frontend'
+}
 
 // agregar la dependencia solo si no se trata de un release
 if (! (project.gradle.startParameter.taskNames.join(",").toLowerCase().contains("release")
@@ -96,8 +126,35 @@ if (! (project.gradle.startParameter.taskNames.join(",").toLowerCase().contains(
    ) {
     build.dependsOn autoBuildNumber 
 }
-build.dependsOn createMavenPom
 
+build.doLast {
+    // copiar las clases compiladas
+    copy {
+        from "build/classes/java/main/."
+        into "target/classes"
+    }
+}
+
+task vaadinBuild (dependsOn: prepareFrontEnd){
+    println "***************************************************************"
+    println "Building Vaadin project: " + name
+    println "VERSION: " + version
+    println "***************************************************************"
+    
+}
+
+task vaadinClean (dependsOn: clean){
+    doLast {
+        //project.delete("assembly")
+        project.delete("bin")
+        project.delete("build")
+        project.delete("node_modules")
+        project.delete("target")
+        project.delete("package.json")
+        project.delete("webpack.config.js")
+        project.delete("webpack.generated.js")
+    }
+}
 
 repositories {
     mavenLocal()
@@ -155,6 +212,11 @@ jar {
             "Implementation-Version": "$version"
       
         )
+    }
+    from "$buildDir/classes/java/main"
+    
+    from ("target/classes/META-INF") {
+        into "META-INF"
     }
 }
 
