@@ -15,6 +15,10 @@ Features:
 - hide windows buttons. 
 - add components to the title bar.
 
+what's new 
+- stay on top.
+- add component to desktop
+
 ###Theme variables:
 ####Subwindows:
 --subwindow-bg: subwindow background color: #fff.
@@ -49,5 +53,3 @@ Features:
 --subwindow-desktop-bar-label-top-focus-style: solid
 --subwindow-desktop-bar-label-top-focus-color: #0066ff
 
-TODO: 
-- close from tab bar.

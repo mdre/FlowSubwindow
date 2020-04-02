@@ -1,12 +1,6 @@
 package com.awesomecontrols.subwindow;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import com.vaadin.flow.component.HasComponents;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -14,11 +8,16 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.templatemodel.TemplateModel;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Tag("sub-windows-desktop")
 // @StyleSheet("frontend://bower_components/sub-window/cards.css")
 @JsModule("./sub-window/sub-windows-desktop.js")
-public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements HasComponents, HasSize {
+public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements HasSize {
     private final static Logger LOGGER = Logger.getLogger(SubWindowDesktop.class.getName());
     private static final long serialVersionUID = -8955205816352713674L;
     static {
@@ -120,20 +119,21 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
                 LOGGER.log(Level.FINER, "*******************************************");
                 LOGGER.log(Level.FINER, "TOP: " + window.getTitle());
                 LOGGER.log(Level.FINER, "*******************************************");
-                window.setZIndex(ZTOP);
+                window.setZIndex(sw.isStayOnTop()?ZTOP*2:ZTOP);
                 // window.focus();
                 window.setClassStyle("card card-4");
                 wdl.setClassName("wdlabel-caption-focus");
                 onTop = wdl;
             } else {
                 LOGGER.log(Level.FINER, "low: " + window.getTitle());
-                window.setZIndex(zindex++);
+                zindex++;
+                window.setZIndex(window.isStayOnTop()?ZTOP+zindex:zindex);
                 window.setClassStyle("card card-1");
                 window.focusLost();
                 wdl.setClassName("wdlabel-caption-focus", false);
             }
         }
-
+        
         /* Muevo ventana hacia el final de la lista */
         if (onTop != null) {
             int itemPos = this.windows.indexOf(onTop);
@@ -203,5 +203,12 @@ public class SubWindowDesktop extends PolymerTemplate<TemplateModel> implements 
     public int getWindowsCount() {
         return this.windows.size();
     }
-
+    
+    /**
+     * Add a compoment to the desktop
+     * @param comp 
+     */
+    public void addComponent(Component comp) {
+    	desktop.add(comp);
+    }
 }

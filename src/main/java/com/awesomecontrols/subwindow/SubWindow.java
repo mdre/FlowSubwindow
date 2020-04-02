@@ -6,11 +6,6 @@
 
 package com.awesomecontrols.subwindow;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.vaadin.flow.component.ClientCallable;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Focusable;
@@ -26,6 +21,10 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -40,7 +39,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     private final static Logger LOGGER = Logger.getLogger(SubWindow.class .getName());
     static {
         if (LOGGER.getLevel() == null) {
-            LOGGER.setLevel(Level.FINER);
+            LOGGER.setLevel(Level.INFO);
         }
     }
 
@@ -59,6 +58,9 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     String widht;
     String height;
     int zindex;
+    
+    // keep the subwindow on top of other, but swith between other subwindows with stayOnTop
+    boolean stayOnTop;
     
     String title;
     
@@ -520,5 +522,23 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public void setState(SubWindowState state) {
         this.state = state;
     }
-
+    
+    /**
+     * Set the stay on top attribute. 
+     * A window with stay on top will be always over other windows, 
+     * but will swith with other windows that has marked as stayOnTop.
+     * 
+     * @param stay boolean
+     */
+    public void stayOnTop(boolean stay) {
+        this.stayOnTop = stay;
+    }
+    
+    /**
+     * Return the stayOnTop state.
+     * @return boolean 
+     */
+    public boolean isStayOnTop() {
+        return this.stayOnTop;
+    }
 }
