@@ -18,6 +18,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
@@ -55,7 +56,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     int top;
     int left;
-    String widht;
+    String width;
     String height;
     int zindex;
     
@@ -63,8 +64,9 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     boolean stayOnTop;
     
     String title;
-    
-    
+    String subtitle;
+    VaadinIcon icon;
+
     // referencias al modelo html
     @Id("subwindow")
     private Div subwindow;
@@ -72,10 +74,13 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     //-----------------------------------------------------
     @Id("header")
     private Div header;
-    
+
     @Id("caption")
     private Div caption;
-    
+
+    @Id("icon")
+    private Div iconContainer;
+
     @Id("custom-controls")
     private Div customControls;
     
@@ -94,7 +99,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     private Image closeButton;
     
     private boolean closeButtonVisible = true;
-    private boolean maximized = true;
+    private boolean maximized = false;
     
     //-----------------------------------------------------
     
@@ -110,7 +115,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     Div grayGlass = new Div();
     
     private boolean inFront = true;
-    
+
     public SubWindow() {
         setId("subwindow");
         this.title = "subwindow";
@@ -118,11 +123,19 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.caption.add(new Label(this.title));
         init();
     }
-    
-    public SubWindow(String title) {
+
+    public SubWindow(String title, String subtitle) {
         setId("subwindow");
-        this.setTitle(title);
-        
+        this.setTitle(title, subtitle);
+
+        init();
+    }
+
+    public SubWindow(String title, String subtitle, VaadinIcon icon) {
+        setId("subwindow");
+        this.setTitle(title, subtitle);
+        this.setIcon(icon);
+
         init();
     }
 
@@ -170,27 +183,66 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         this.content.removeAll();
         this.content.add(content);
     }
-    
-    
+
+
     /**
      * Set the subwindow title.
-     * @return 
+     * @return
      */
-    public SubWindow setTitle(String title) {
+    public SubWindow setTitle(String title, String subtitle) {
         this.title = title;
+        this.subtitle = subtitle;
         this.caption.removeAll();
-        this.caption.add(new Label(this.title));
+        this.caption.add(new Label(getTitle() + getSubtitle()));
         return this;
     }
-    
+
+    /**
+     * Set the subwindow subtitle.
+     * @return
+     */
+    public SubWindow setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+        this.caption.removeAll();
+        this.caption.add(new Label(getTitle() + getSubtitle()));
+        return this;
+    }
+
+    /**
+     * Set the subwindow icon.
+     * @return
+     */
+    public SubWindow setIcon(VaadinIcon icon) {
+        this.icon = icon;
+        this.iconContainer.removeAll();
+        this.iconContainer.add(icon.create());
+        return this;
+    }
+
     /**
      * Return the subwindow title
-     * @return 
+     * @return
      */
     public String getTitle() {
         return this.title;
     }
-    
+
+    /**
+     * Return the subwindow subtitle
+     * @return
+     */
+    public String getSubtitle() {
+        return this.subtitle != null && !this.subtitle.equals("") ? " | " + this.subtitle : "";
+    }
+
+    /**
+     * Return the subwindow icon
+     * @return
+     */
+    public VaadinIcon getIcon() {
+        return this.icon;
+    }
+
     /**
      * Set the subwindow top position in pixels
      * @param top in pixels
@@ -281,7 +333,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     @Override
     public void setWidth(String w) {
         this.subwindow.getStyle().set("width", w);
-        this.widht = w;
+        this.width = w;
     }
     
     /**
@@ -291,12 +343,12 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
      */
     public SubWindow setWidth(int w) {
         this.subwindow.getStyle().set("width", w+"px");
-        this.widht = w+"px";
+        this.width = w+"px";
         return this;
     }
     
     @ClientCallable
-    private void updatePosition(int top, int left){
+    public void updatePosition(int top, int left){
         
         LOGGER.log(Level.FINER, ""+top+","+left);
         if (isMaximized()) {
@@ -305,21 +357,33 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         else {
             this.top = top;
             this.left = left;
+
+            // disparar el evento.
+            for (ISubWindowEvents el : this.eventListeners) {
+                el.updatePosition(top, left);
+            }
         }
-    };
-    
-    
+    }
+
     @ClientCallable
-    private void updateSize(String w, String h){ 
-        this.widht = w;
+    public void updateSize(String w, String h){
+        this.width = w;
         this.height = h;
-        LOGGER.log(Level.FINER, "update size: w: "+this.widht+" h: "+this.height);
+        LOGGER.log(Level.FINER, "update size: w: "+this.width +" h: "+this.height);
+
+        // disparar el evento.
+        for (ISubWindowEvents el : this.eventListeners) {
+            el.updateSize(w, h);
+        }
+
     };
     
     @ClientCallable
     public void onWindowsClick() {
         LOGGER.log(Level.FINER, "Click Event!");
-        this.bringToFront();
+        if (!this.inFront) {
+            this.bringToFront();
+        }
     }
     
     @ClientCallable
@@ -369,17 +433,27 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.minimize();
         }
     }
-    
+
+    @ClientCallable
+    public void toggleMaximizeRestore() {
+        if (isMaximized()) {
+            restore();
+        }
+        else {
+            maximize();
+        }
+    }
+
     @Override
     @ClientCallable
     public void maximize() {
         
         // preserve the size;
-        if (this.widht==null || this.widht.isEmpty()) {
-            this.widht = this.subwindow.getStyle().get("width");
+        if (this.width ==null || this.width.isEmpty()) {
+            this.width = this.subwindow.getStyle().get("width");
         }
         
-        if (this.widht == null || this.height.isEmpty()) {
+        if (this.width == null || this.height.isEmpty()) {
             this.height = this.subwindow.getStyle().get("height");
         }
         
@@ -416,10 +490,10 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public void restore() {
         this.state = SubWindowState.NORMAL;
         LOGGER.log(Level.INFO, "Restore");
-        LOGGER.log(Level.INFO, "L:"+this.left+", T:"+this.top+" - w:"+this.widht+", h:"+this.height);
+        LOGGER.log(Level.INFO, "L:"+this.left+", T:"+this.top+" - w:"+this.width +", h:"+this.height);
         this.subwindow.getStyle().set("left", ""+this.left+"px");
         this.subwindow.getStyle().set("top", ""+this.top+"px");
-        this.subwindow.getStyle().set("width", ""+this.widht);
+        this.subwindow.getStyle().set("width", ""+this.width);
         this.subwindow.getStyle().set("height", ""+this.height);
         this.restoreButton.getStyle().set("display", "none");
 //        this.restoreButton.setVisible(false);
@@ -432,7 +506,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
             el.restore();
         }
     }
-    
+
     void focusLost() {
         LOGGER.log(Level.INFO, "focuslost: "+this.grayOnFocusLost+" - "+this.inFront);
         if (this.grayOnFocusLost && this.inFront) {

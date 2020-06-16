@@ -5,20 +5,20 @@ subwindowStyleElement.innerHTML = `
     <template>
         <style>
             .subwindow {
-                position:absolute; 
+                position:absolute;
                 z-index:10;
                 overflow: hidden;
             }
-            
+
             .subwindow-header {
                 position: relative;
-                width:100%; 
+                width:100%;
                 height: 30px;
                 /*padding-bottom:8px;*/
                 background: var(--subwindow-header-bg);
-                
-                border-bottom: var(--subwindow-header-bottomline-width,1px) 
-                               var(--subwindow-header-bottomline-style,solid) 
+
+                border-bottom: var(--subwindow-header-bottomline-width,1px)
+                               var(--subwindow-header-bottomline-style,solid)
                                var(--subwindow-header-bottomline-color,#718191);
 
 
@@ -31,13 +31,21 @@ subwindowStyleElement.innerHTML = `
                 -webkit-flex-flow: row nowrap;
                 justify-content: space-between;
                 align-items: stretch;
-                
+
                 cursor: move;
 
             }
+            .subwindow-header-icon {
+                padding-left: 2px;
+            }
+
+            .subwindow-header-icon iron-icon{
+                max-height: 16px;
+            }
+
             .subwindow-header-caption {
                 width: 100%;
-                padding-left: 8px;
+                padding-left: 2px;
                 display: -webkit-box;
                 display: -moz-box;
                 display: -ms-flexbox;
@@ -52,6 +60,11 @@ subwindowStyleElement.innerHTML = `
 
                 color: var(--subwindow-header-color);
             }
+
+            .subwindow-header-caption label {
+                font-size: var(--lumo-font-size-m, 0.875rem);
+            }
+
             .subwindow-custom-controls {
                 height: 18px;
                 align-content: center;
@@ -73,7 +86,7 @@ subwindowStyleElement.innerHTML = `
                 margin-top: 0px;
 
             }
-            
+
             .subwindow-top-button {
                 border-radius: 3px;
                 border: 1px solid #666666;
@@ -81,28 +94,29 @@ subwindowStyleElement.innerHTML = `
                 height: 15px;
                 text-align: center;
                 display: inline-block;
+                cursor: pointer;
             }
 
             .subwindow-content {
-                /*background-color:#66ff66;*/ 
-                width: 100%; 
+                /*background-color:#66ff66;*/
+                width: 100%;
                 height: calc(100% - 31px);
                 overflow: auto;
             }
 
             .subwindow-resize {
-                position: absolute; 
+                position: absolute;
                 bottom: 0px;
-                right: 0px; 
+                right: 0px;
                 width: 5px;
-                height: 5px; 
+                height: 5px;
                 /* border-style: solid;
                 border-width: 5px 5px 0 0;*/
                 background: var(--subwindow-resize-color,#666666);
-                
+
                 -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
-                clip-path: polygon(100% 0, 100% 100%, 0 100%);   
-                
+                clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
                 cursor: se-resize;
             }
 

@@ -32,7 +32,12 @@ class WDLabel extends ThemableMixin(PolymerElement) {
         return 'wd-label';
     }
 
-
+    onLabelClick(event) {
+        console.log("Label click event!")
+        this.$server.onLabelClick();
+        event.stopPropagation();
+    }
 }
+
 
 customElements.define(WDLabel.is, WDLabel);
