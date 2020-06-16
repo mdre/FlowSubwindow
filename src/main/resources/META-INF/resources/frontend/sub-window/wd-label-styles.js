@@ -4,10 +4,13 @@ const wdLabelStyleElement = document.createElement('dom-module');
 wdLabelStyleElement.innerHTML = `
     <template>
         <style>
+
             .wdlabel-caption {
                 position:relative; 
-                width: var(--subwindow-desktop-bar-label-width,150px);
+                width: var(--subwindow-desktop-bar-label-width,200px);
                 height: 27px;
+                padding-left: 2px;
+
                 overflow: hidden;
                 display: inline-block;
                 /*background: #00000000;*/
@@ -15,6 +18,7 @@ wdLabelStyleElement.innerHTML = `
                             var(--subwindow-desktop-bar-label-top-style,solid)
                             var(--subwindow-desktop-bar-label-top-color,#666666);
                 /*border-top-color: blue;*/
+                font-size: var(--lumo-font-size-m, 0.875rem);
             }
             
             .wdlabel-caption:hover {
@@ -55,8 +59,17 @@ wdLabelStyleElement.innerHTML = `
                 overflow: hidden;
                 white-space: nowrap;
                 display: inline-block;
-                width: 85%;
+                width: 75%;
+                font-size: var(--lumo-font-size-m, 0.875rem);
+                margin: 2px;
             }
+
+            .wdlabel-icon {
+                max-height: 16px;
+                margin-top: 5px;
+                vertical-align: top;
+            }
+
         </style>
     </template>
     `;

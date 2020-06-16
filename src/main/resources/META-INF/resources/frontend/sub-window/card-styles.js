@@ -1,11 +1,14 @@
 import { html } from '@polymer/polymer/polymer-element.js';
 const cardStyleElement = document.createElement('dom-module');
+cardStyleElement.setAttribute("id", "card-styles");
+cardStyleElement.setAttribute("theme-for", "subwindow");
+
 cardStyleElement.innerHTML = `
     <template>
         <style>
             .card {
-                background: #fff;
-                border-radius: 2px;
+                background: var(--subwindow-bg,#fff);
+                border-radius: var(--subwindow-border-radius,2px);
                 display: inline-block;
                 /*margin: 1rem;*/
                 position: relative;

@@ -23,13 +23,16 @@ class SubWindow extends PolymerElement {
 
                <div id="subwindow" 
                     class="card card-1 subwindow"
-                    draggable="true"
+                    draggable="false"
                     on-click="onWindowClick"
                     > 
                     <div id="header" 
                          class="subwindow-header"
                          on-mousedown="beginDrag"
-                         >
+                         on-dblclick="onHeaderDblClick">
+                         <div id="icon"
+                              class="subwindow-header-icon">
+                         </div>
                          <div id="caption"
                               class="subwindow-header-caption"
                               >
@@ -81,30 +84,9 @@ class SubWindow extends PolymerElement {
     }
 
     onWindowClick(event) {
+        this.$server.onWindowsClick();
         event.stopPropagation();
-
-        ////console.log("subwindows click!");
-        ////console.log(event);
-        // verificar que se haya hecho clic en la ventana.
-        // busco el primer elemento cuyo ID != "" y verifico que sea un subwindow.
-
-        // fix para FF y Chrome. event.path no es estandar. 
-        var path = event.path || (event.composedPath && event.composedPath());
-
-        ////console.log(path);
-        var i = 0;
-        while (path[i].id != "subwindow") {
-            i++;
-        }
-        ////console.log(path[i]);
-        if (path[i].id == "subwindow") {
-            //var flowElement = element.parentNode.host;
-            this.$server.onWindowsClick();
-        }
     }
-
-
-
 
     beginDrag(event) {
         var selfRef = this;
@@ -313,6 +295,12 @@ class SubWindow extends PolymerElement {
         // var flowElement = element.parentNode.host;
         // flowElement.$server.restore();
         this.$server.restore();
+        event.stopPropagation();
+    }
+
+    onHeaderDblClick(event) {
+        // var flowElement = element.parentNode.host;
+        this.$server.toggleMaximizeRestore();
         event.stopPropagation();
     }
 
