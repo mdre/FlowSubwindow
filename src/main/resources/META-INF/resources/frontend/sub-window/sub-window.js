@@ -1,4 +1,5 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import { ThemableMixin } from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
 import "@vaadin/flow-frontend/sub-window/card-styles.js";
 import "@vaadin/flow-frontend/sub-window/sub-window-styles.js"
@@ -14,7 +15,7 @@ import "@vaadin/flow-frontend/sub-window/sub-window-styles.js"
  * @polymer
  * @demo demo/index.html
  */
-class SubWindow extends PolymerElement {
+class SubWindow extends ThemableMixin(PolymerElement) {
 
     static get template() {
         return html `

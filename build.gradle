@@ -111,7 +111,7 @@ repositories {
 }
 
 dependencies {
-    compile("com.vaadin:vaadin:$vaadinVersion")
+    compile("com.vaadin:vaadin-core:$vaadinVersion")
     //compile('com.vaadin:vaadin-bom:14.0.14')
     // compile vaadin.bom()
     // compile vaadin.core()
