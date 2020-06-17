@@ -64,7 +64,6 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     boolean stayOnTop;
     
     String title;
-    String subtitle;
     VaadinIcon icon;
 
     // referencias al modelo html
@@ -124,16 +123,16 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
         init();
     }
 
-    public SubWindow(String title, String subtitle) {
+    public SubWindow(String title) {
         setId("subwindow");
-        this.setTitle(title, subtitle);
-
+        this.setTitle(title);
+        
         init();
     }
 
-    public SubWindow(String title, String subtitle, VaadinIcon icon) {
+    public SubWindow(String title, VaadinIcon icon) {
         setId("subwindow");
-        this.setTitle(title, subtitle);
+        this.setTitle(title);
         this.setIcon(icon);
 
         init();
@@ -189,25 +188,14 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
      * Set the subwindow title.
      * @return
      */
-    public SubWindow setTitle(String title, String subtitle) {
+    public SubWindow setTitle(String title) {
         this.title = title;
-        this.subtitle = subtitle;
         this.caption.removeAll();
-        this.caption.add(new Label(getTitle() + getSubtitle()));
+        this.caption.add(new Label(getTitle()));
         return this;
     }
 
-    /**
-     * Set the subwindow subtitle.
-     * @return
-     */
-    public SubWindow setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
-        this.caption.removeAll();
-        this.caption.add(new Label(getTitle() + getSubtitle()));
-        return this;
-    }
-
+    
     /**
      * Set the subwindow icon.
      * @return
@@ -226,14 +214,7 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     public String getTitle() {
         return this.title;
     }
-
-    /**
-     * Return the subwindow subtitle
-     * @return
-     */
-    public String getSubtitle() {
-        return this.subtitle != null && !this.subtitle.equals("") ? " | " + this.subtitle : "";
-    }
+    
 
     /**
      * Return the subwindow icon
