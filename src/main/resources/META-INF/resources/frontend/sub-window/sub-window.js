@@ -46,22 +46,19 @@ class SubWindow extends ThemableMixin(PolymerElement) {
                               class="subwindow-top-buttonsbar"
                               >
                               <img id="minimizeButton"
-                              class="subwindow-top-button" 
-                              on-click="onMinimizeClick" 
-                              src="./frontend/sub-window/icons/baseline-minimize-24px.svg"
+                                    class="subwindow-top-button subwindow-minimize-button" 
+                                    on-click="onMinimizeClick" 
                               />
                               
                               <img id="maximizeButton"
-                                   class="subwindow-top-button"
+                                   class="subwindow-top-button subwindow-maximize-button"
                                    on-click="onMaximizeClick"
-                                   src="./frontend/sub-window/icons/baseline-fullscreen-24px.svg"
                                    />
                               
                               <img id="restoreButton"
-                                   class="subwindow-top-button"
+                                   class="subwindow-top-button subwindow-restore-button"
                                    on-click="onRestoreClick"
-                                   src="./frontend/sub-window/icons/baseline-fullscreen_exit-24px.svg"
-                                   />
+                              />
                               
                               <img id="closeButton"
                                    class="subwindow-top-button"
