@@ -16,7 +16,6 @@ import com.vaadin.flow.component.HasTheme;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -86,16 +85,16 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
     
     
     @Id("minimizeButton")
-    private Image minimizeButton;
+    private Div minimizeButton;
     
     @Id("maximizeButton")
-    private Image maximizeButton;
+    private Div maximizeButton;
     
     @Id("restoreButton")
-    private Image restoreButton;
+    private Div restoreButton;
     
     @Id("closeButton")
-    private Image closeButton;
+    private Div closeButton;
     
     private boolean closeButtonVisible = true;
     private boolean maximized = false;

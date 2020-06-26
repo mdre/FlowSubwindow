@@ -108,6 +108,10 @@
     content:url("./frontend/sub-window/icons/baseline-fullscreen_exit-24px.svg");
 }
 
+.subwindow-close-button {
+    content:url("./frontend/sub-window/icons/baseline-close-24px.svg");
+}
+
 .subwindow-content {
     /*background-color:#66ff66;*/
     width: 100%;
