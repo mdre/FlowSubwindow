@@ -14,7 +14,7 @@ import "@vaadin/flow-frontend/sub-window/sub-windows-desktop-styles.js";
 class SubWindowDesktop extends ThemableMixin(PolymerElement) {
 
     static get template() {
-        return html `
+        return html`
         <style include="sub-windows-desktop-styles">
         </style>
 
