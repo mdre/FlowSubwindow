@@ -21,6 +21,7 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -594,5 +595,12 @@ public class SubWindow extends PolymerTemplate<SubWindowModel>
      */
     public boolean isStayOnTop() {
         return this.stayOnTop;
+    }
+    /**
+     * Return a reference to the subwindow Div element.
+     * @return 
+     */
+    public Element getSubwindowElementReference() {
+        return this.subwindow.getElement();
     }
 }
