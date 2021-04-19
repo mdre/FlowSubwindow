@@ -10,7 +10,7 @@
     <description>SubWindowDesktop and Subwindow component for Vaadin Flow 14.+</description>
 
     <properties>
-    <vaadin.version>14.1.3</vaadin.version>
+    <vaadin.version>19.0.5</vaadin.version>
 
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
