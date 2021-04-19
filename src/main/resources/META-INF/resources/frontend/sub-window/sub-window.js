@@ -18,7 +18,7 @@ import "@vaadin/flow-frontend/sub-window/sub-window-styles.js"
 class SubWindow extends ThemableMixin(PolymerElement) {
 
     static get template() {
-        return html `
+        return html`
                <style include="card-styles sub-window-styles">
                </style>
 
